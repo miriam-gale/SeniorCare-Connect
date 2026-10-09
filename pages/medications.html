@@ -3,23 +3,201 @@
   <head>
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>SeniorCare Connect Medications</title>
 
   </head>
   <body>
-    <header>
-      <div class="logo">SeniorCare Connect</div>
 
-      <nav>
+  
+<header class="page-header">
+    <a href="../index.html" class="logo">
+        <img src="../images/logo.png" alt="SeniorCare Connect logo">
+        <span>SeniorCare Connect</span>
+    </a>
+
+    <button
+        class="page-menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="page-navigation"
+    >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <nav class="page-navigation" id="page-navigation">
         <a href="../index.html">Home</a>
-        <a href="medications.html">Medications</a>
-      </nav>
-    </header>
+        <a href="medications.html" aria-current="page">Medications</a>
+        <a href="symptoms.html">Health Records</a>
+        <a href="triage.html">Triage</a>
+        <a href="find-care.html">Find Care</a>
+        <a href="health-report.html">Health Report</a>
+        <a href="healthcare-provider.html">Providers</a>
+    </nav>
+</header>
 
-    <main>
-      <section></section>
-    </main>
+    
+<main class="medications-page">
 
+    <section class="medications-header">
+
+        <p class="section-label">HEALTH MANAGEMENT</p>
+
+        <h1>Medication Management</h1>
+
+        <p class="medications-intro">
+            Keep track of medications and help ensure your loved ones
+            follow their prescribed schedules.
+        </p>
+
+    </section>
+
+    
+<section class="medication-summary">
+
+    <article class="medication-summary-card">
+
+        <div class="summary-icon">
+            <i class="fa-solid fa-capsules" aria-hidden="true"></i>
+        </div>
+
+        <div class="summary-content">
+            <h2>My Medications</h2>
+            <p>Keep your medication information organised.</p>
+        </div>
+
+    </article>
+
+    <article class="medication-summary-card">
+
+        <div class="summary-icon">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+        </div>
+
+        <div class="summary-content">
+            <h2>Medication Schedule</h2>
+            <p>Review when medications should be taken.</p>
+        </div>
+
+    </article>
+</section>
+
+
+<section class="medication-form-section">
+
+    <h2>Add a Medication</h2>
+
+    <p>
+        Enter the information from the person's prescription or
+        medication instructions.
+    </p>
+
+    <form id="medication-form">
+
+        <div class="form-group">
+            <label for="medication-name">Medication name</label>
+            <input
+                type="text"
+                id="medication-name"
+                name="medication-name"
+                placeholder="e.g. Paracetamol"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="dosage">Dosage</label>
+            <input
+            type="text"
+            id="dosage"
+            name="dosage"
+            placeholder="e.g. 500 mg, as prescribed"
+            aria-describedby="dosage-help"
+            required
+            >
+            <small id="dosage-help">
+              Enter the dosage exactly as shown on the prescription or medication instructions.
+            </small>
+
+        </div>
+
+        <div class="form-group">
+            <label for="frequency">Frequency</label>
+            <select id="frequency" name="frequency" required>
+                <option value="">Select frequency</option>
+                <option value="Once daily">Once daily</option>
+                <option value="Twice daily">Twice daily</option>
+                <option value="Three times daily">Three times daily</option>
+                <option value="As prescribed">As prescribed</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="medication-time">Time of day</label>
+            <input
+                type="time"
+                id="medication-time"
+                name="medication-time"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn-primary">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            Add Medication
+        </button>
+
+    </form>
+</section>
+
+
+<section class="medication-list-section">
+
+    <h2>Medication List</h2>
+
+    <p class="medication-list-description">
+        Below are the medications you have added.
+    </p>
+
+    <div class="medication-table-container">
+
+        <table class="medication-table">
+
+            <thead>
+                <tr>
+                    <th scope="col">Medication</th>
+                    <th scope="col">Dosage</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="medication-list">
+
+                <!-- JavaScript will insert medication rows here. -->
+
+            </tbody>
+
+        </table>
+
+        <p id="empty-message">
+            No medications have been added yet.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+</main>
+
+<script src="../js/main.js"></script>
+<script src="../js/medications.js"></script>
   </body>
 
 </html>
