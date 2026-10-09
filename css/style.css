@@ -38,6 +38,10 @@ header {
     font-size: 16px;
 }
 
+.menu-button {
+    display: none;
+}
+
 .logo span {
     font-size: 20px;
     font-weight: 600;
@@ -61,7 +65,7 @@ header {
     min-height: 500px;
     padding: 70px;
     background-color: #eaf8f7;
-    background-image: url("../hero-image.png");
+    background-image: url("../images/hero-image.png");
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
@@ -383,6 +387,7 @@ footer {
 }
 
 
+
 .social-links a:nth-child(1):hover {
     color: #1877f2;
     text-shadow: 0 0 10px #1877f2;
@@ -398,4 +403,521 @@ footer {
 .social-links a:nth-child(3):hover {
     color: #0a66c2;
     text-shadow: 0 0 10px #0a66c2;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 25px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo span {
+        font-size: 17px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+        .hero {
+        min-height: 450px;
+        padding: 50px 25px;
+        background-position: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .main-heading {
+        font-size: 42px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 18px;
+    }
+
+        .features {
+        flex-wrap: wrap;
+        padding: 40px 25px;
+        gap: 15px;
+    }
+
+    .feature-card {
+        flex: 1 1 45%;
+        padding: 20px;
+    }
+
+        .who-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 50px 25px;
+    }
+
+    .who-intro {
+        max-width: 100%;
+    }
+
+    .who-cards {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .who-card {
+        padding: 25px 20px;
+    }
+
+    .section-heading {
+        font-size: 32px;
+    }
+
+        .how-it-works {
+        padding: 50px 25px;
+    }
+
+    .how-it-works > h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .steps-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .step-card {
+        padding: 25px 20px;
+    }
+
+        .cta-section {
+        padding: 50px 25px;
+    }
+
+    .cta-section h2 {
+        font-size: 32px;
+    }
+
+    .cta-section p {
+        font-size: 16px;
+    }
+
+    .cta-button {
+        padding: 13px 24px;
+    }
+
+        footer {
+        padding: 40px 25px 20px;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-navigation {
+        min-width: 0;
+    }
+
+    .copyright {
+        margin-top: 30px;
+    }
+
+        .menu-button {
+        display: block;
+        border: none;
+        background: none;
+        color: #102a43;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .navigation.show-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 20px 25px;
+    gap: 20px;
+    background-color: #ffffff;
+    border-top: 1px solid #e1ecec;
+    box-shadow: 0 8px 15px rgba(16, 42, 67, 0.1);
+    z-index: 1000;
+}
+
+header {
+    position: relative;
+}
+}
+
+@media (max-width: 480px) {
+
+    /* -----========
+       HEADER
+       ========================= */
+
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .logo span {
+        font-size: 15px;
+    }
+
+    .menu-button {
+        font-size: 21px;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+        min-height: 430px;
+        padding: 40px 20px;
+    }
+
+    .paragraph-home {
+        font-size: 15px;
+    }
+
+    .main-heading {
+        font-size: 36px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+
+
+    /* =========================
+       FEATURES
+       ========================= */
+
+    .features {
+        padding: 35px 20px;
+        gap: 15px;
+    }
+
+    .feature-card {
+        flex: 1 1 100%;
+        padding: 22px 18px;
+    }
+
+
+    /* =========================
+       WHO IT'S FOR
+       ========================= */
+
+    .who-section {
+        padding: 40px 20px;
+    }
+
+    .section-heading {
+        font-size: 30px;
+    }
+
+    .who-card {
+        padding: 25px 18px;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+       ========================= */
+
+    .how-it-works {
+        padding: 40px 20px;
+    }
+
+    .how-it-works > h2 {
+        font-size: 30px;
+    }
+
+    .step-card {
+        padding: 22px 18px;
+    }
+
+
+    /* =========================
+       CTA
+       ========================= */
+
+    .cta-section {
+        padding: 40px 20px;
+    }
+
+    .cta-section h2 {
+        font-size: 30px;
+    }
+
+    .cta-section p {
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+        padding: 35px 20px 20px;
+    }
+
+    .footer-navigation {
+        gap: 18px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 390px) {
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+        padding: 12px 18px;
+    }
+
+    .logo img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo span {
+        font-size: 14px;
+    }
+
+    .menu-button {
+        font-size: 20px;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+        min-height: 410px;
+        padding: 35px 18px;
+    }
+
+    .paragraph-home {
+        font-size: 14px;
+    }
+
+    .main-heading {
+        font-size: 32px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       FEATURES
+       ========================= */
+
+    .features {
+        padding: 30px 18px;
+        gap: 12px;
+    }
+
+    .feature-card {
+        padding: 20px 15px;
+    }
+
+    .feature-card i {
+        font-size: 27px;
+    }
+
+    .feature-heading {
+        font-size: 17px;
+    }
+
+    .feature-description {
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       WHO IT'S FOR
+       ========================= */
+
+    .who-section {
+        padding: 35px 18px;
+        gap: 25px;
+    }
+
+    .section-heading {
+        font-size: 28px;
+    }
+
+    .who-intro > p:not(.section-label) {
+        font-size: 15px;
+    }
+
+    .who-button {
+        padding: 11px 17px;
+        font-size: 14px;
+    }
+
+    .who-card {
+        padding: 22px 15px;
+    }
+
+    .who-card i {
+        font-size: 32px;
+    }
+
+    .who-card h3 {
+        font-size: 17px;
+    }
+
+    .who-description {
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+       ========================= */
+
+    .how-it-works {
+        padding: 35px 18px;
+    }
+
+    .how-it-works > h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .step-card {
+        padding: 22px 15px;
+    }
+
+    .step-card h3 {
+        font-size: 17px;
+    }
+
+    .step-card p {
+        font-size: 13px;
+    }
+
+
+    /* =========================
+       CTA
+       ========================= */
+
+    .cta-section {
+        padding: 35px 18px;
+    }
+
+    .cta-section h2 {
+        font-size: 28px;
+    }
+
+    .cta-section p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+        padding: 30px 18px 18px;
+    }
+
+    .footer-logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-logo span {
+        font-size: 16px;
+    }
+
+    .footer-brand > p {
+        font-size: 13px;
+    }
+
+    .footer-navigation {
+        gap: 15px;
+    }
+
+    .footer-navigation a {
+        font-size: 13px;
+    }
+
+    .social-links {
+        gap: 12px;
+    }
+
+    .social-links a {
+        font-size: 16px;
+    }
+
+    .copyright {
+        font-size: 11px;
+    }
+
 }
