@@ -3073,3 +3073,899 @@ body {
     }
 }
 
+
+
+/* Page background and layout */
+body:has(.allergies-page) {
+    background: #f3f9f7;
+}
+
+.allergies-page {
+    width: min(1780px, 94%);
+    margin: 0 auto;
+    padding: 30px 0 60px;
+    color: #173047;
+}
+
+/* HERO */
+.allergies-page .allergies-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 30px;
+    min-height: 400px;
+    padding: 48px 3.5%;
+    margin-bottom: 24px;
+    overflow: hidden;
+    border: 1px solid #d5eee6;
+    border-radius: 30px;
+    background: linear-gradient(110deg, #effaf6 0%, #dcf7ee 100%);
+}
+
+.allergies-page .allergies-hero-content {
+    min-width: 0;
+}
+
+.allergies-page .allergies-hero-content .section-label {
+    margin: 0 0 24px;
+    color: #078f87;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.allergies-page .allergies-hero-content h1 {
+    margin: 0 0 22px;
+    color: #173047;
+    font-size: clamp(2.8rem, 4.5vw, 4.8rem);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+}
+
+.allergies-page .allergies-hero-content > p:last-child {
+    max-width: 780px;
+    margin: 0;
+    color: #587080;
+    font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+    line-height: 1.8;
+}
+
+/* Transparent hero illustration */
+.allergies-page .allergies-hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 310px;
+    min-width: 0;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+.allergies-page .allergies-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* FEATURE CARDS */
+.allergies-page .allergy-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0 0 30px;
+    padding: 0;
+}
+
+.allergies-page .allergy-feature-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-width: 0;
+    min-height: 150px;
+    padding: 26px 30px;
+    border: 1px solid #d9ebe6;
+    border-radius: 25px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgb(23 48 71 / 4%);
+}
+
+.allergies-page .allergy-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 82px;
+    width: 82px;
+    height: 82px;
+    border-radius: 22px;
+    background: #e4f4ef;
+    color: #078f87;
+    font-size: 2rem;
+}
+
+.allergies-page .allergy-feature-card h2 {
+    margin: 0 0 10px;
+    color: #173047;
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+.allergies-page .allergy-feature-card p {
+    margin: 0;
+    color: #587080;
+    font-size: 1.05rem;
+    line-height: 1.55;
+}
+
+/* FORM + RECORDS */
+.allergies-page .allergy-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.55fr);
+    align-items: start;
+    gap: 22px;
+}
+
+.allergies-page .allergy-form-card,
+.allergies-page .allergy-records-card {
+    min-width: 0;
+    margin: 0;
+    padding: 32px;
+    border: 1px solid #d9ebe6;
+    border-radius: 27px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgb(23 48 71 / 4%);
+}
+
+.allergies-page .allergy-form-card > h2,
+.allergies-page .allergy-records-heading h2 {
+    margin: 0 0 10px;
+    color: #173047;
+    font-size: 1.65rem;
+    line-height: 1.3;
+}
+
+.allergies-page .allergy-form-card > p,
+.allergies-page .allergy-records-heading p {
+    margin: 0 0 26px;
+    color: #587080;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* FORM FIELDS */
+.allergies-page .allergy-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.allergies-page .allergy-field label,
+.allergies-page .allergy-severity-field legend {
+    color: #173047;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.allergies-page .allergy-field label > span:not(.allergy-optional),
+.allergies-page .allergy-severity-field legend > span {
+    color: #e34848;
+}
+
+.allergies-page .allergy-optional {
+    color: #758895;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.allergies-page .allergy-field input,
+.allergies-page .allergy-field select,
+.allergies-page .allergy-field textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 60px;
+    padding: 14px 18px;
+    border: 1px solid #d3e1e9;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #173047;
+    font: inherit;
+    font-size: 1.05rem;
+}
+
+.allergies-page .allergy-field textarea {
+    min-height: 115px;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.allergies-page .allergy-field input::placeholder,
+.allergies-page .allergy-field textarea::placeholder {
+    color: #7c8996;
+    opacity: 1;
+}
+
+.allergies-page .allergy-field input:focus,
+.allergies-page .allergy-field select:focus,
+.allergies-page .allergy-field textarea:focus {
+    outline: 3px solid rgb(8 143 135 / 15%);
+    border-color: #078f87;
+}
+
+/* SEVERITY OPTIONS */
+.allergies-page .allergy-severity-field {
+    min-width: 0;
+    margin: 0 0 24px;
+    padding: 0;
+    border: 0;
+}
+
+.allergies-page .allergy-severity-field legend {
+    margin-bottom: 16px;
+}
+
+.allergies-page .allergy-severity-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+}
+
+.allergies-page .allergy-severity-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: #173047;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.allergies-page .allergy-severity-options input {
+    width: 19px;
+    height: 19px;
+    margin: 0;
+    accent-color: #078f87;
+}
+
+/* FORM BUTTONS */
+.allergies-page .allergy-form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.allergies-page .allergy-submit-button,
+.allergies-page .allergy-cancel-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 62px;
+    padding: 15px 24px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.allergies-page .allergy-submit-button {
+    background: #078f83;
+    color: #ffffff;
+}
+
+.allergies-page .allergy-submit-button:hover {
+    background: #06776f;
+}
+
+.allergies-page .allergy-cancel-button {
+    border-color: #d3e1e9;
+    background: #ffffff;
+    color: #173047;
+}
+
+.allergies-page .allergy-cancel-button:hover {
+    background: #f2f8f7;
+}
+
+.allergies-page .allergy-submit-button:focus-visible,
+.allergies-page .allergy-cancel-button:focus-visible {
+    outline: 3px solid rgb(8 143 135 / 25%);
+    outline-offset: 3px;
+}
+
+.allergies-page .allergy-message {
+    margin: 0 0 15px;
+    color: #087b70;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.allergies-page .allergy-message:empty {
+    display: none;
+}
+
+/* RECORDS HEADER */
+.allergies-page .allergy-records-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.allergies-page .allergy-records-heading p {
+    margin-bottom: 0;
+}
+
+.allergies-page .allergy-record-count {
+    flex-shrink: 0;
+    padding: 14px 18px;
+    border: 1px solid #d1eee7;
+    border-radius: 14px;
+    background: #edf9f6;
+    color: #087b70;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+/* ALLERGY TABLE */
+.allergies-page .allergy-table-container {
+    width: 100%;
+    min-width: 0;
+}
+
+.allergies-page .allergy-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 1rem;
+}
+
+.allergies-page .allergy-table th,
+.allergies-page .allergy-table td {
+    padding: 17px 14px;
+    border-bottom: 1px solid #e3ecef;
+    text-align: left;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+.allergies-page .allergy-table th {
+    background: #edf7f4;
+    color: #173047;
+    font-weight: 700;
+}
+
+.allergies-page .allergy-table th:first-child {
+    border-top-left-radius: 14px;
+}
+
+.allergies-page .allergy-table th:last-child {
+    border-top-right-radius: 14px;
+}
+
+.allergies-page .allergy-table tbody tr:hover {
+    background: #f7fbfa;
+}
+
+/* EMPTY RECORDS STATE */
+.allergies-page .allergy-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 240px;
+    margin-top: 18px;
+    padding: 30px 20px;
+    border: 1px solid #dfebef;
+    border-radius: 22px;
+    background: #f7fafb;
+    text-align: center;
+}
+
+.allergies-page .allergy-empty-state > i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 4px;
+    border-radius: 20px;
+    background: #e8f1f5;
+    color: #58798b;
+    font-size: 1.8rem;
+}
+
+.allergies-page .allergy-empty-state h3,
+.allergies-page .allergy-empty-state p {
+    margin: 0;
+}
+
+.allergies-page .allergy-empty-state h3 {
+    color: #173047;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.allergies-page .allergy-empty-state p {
+    color: #587080;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* HEALTH AND SAFETY NOTE */
+.allergies-page .allergy-disclaimer {
+    margin: 24px 0 0;
+    padding: 20px 22px;
+    border-left: 5px solid #d8a33d;
+    border-radius: 8px;
+    background: #fff9eb;
+    color: #65532d;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* TABLET */
+@media (max-width: 1100px) {
+    .allergies-page .allergies-hero {
+        min-height: 340px;
+    }
+
+    .allergies-page .allergy-features {
+        gap: 14px;
+    }
+
+    .allergies-page .allergy-feature-card {
+        gap: 16px;
+        padding: 20px;
+    }
+
+    .allergies-page .allergy-feature-icon {
+        flex-basis: 64px;
+        width: 64px;
+        height: 64px;
+        font-size: 1.6rem;
+    }
+
+    .allergies-page .allergy-feature-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .allergies-page .allergy-feature-card p {
+        font-size: 0.95rem;
+    }
+
+    .allergies-page .allergy-workspace {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+        gap: 16px;
+    }
+
+    .allergies-page .allergy-form-card,
+    .allergies-page .allergy-records-card {
+        padding: 22px;
+    }
+}
+
+/* MOBILE AND NARROW TABLETS */
+@media (max-width: 800px) {
+    .allergies-page .allergies-hero {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        min-height: auto;
+        padding: 34px 26px 22px;
+    }
+
+    .allergies-page .allergies-hero-image {
+        height: 230px;
+    }
+
+    .allergies-page .allergy-features {
+        grid-template-columns: 1fr;
+    }
+
+    .allergies-page .allergy-feature-card {
+        min-height: 120px;
+    }
+
+    .allergies-page .allergy-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .allergies-page .allergy-form-card,
+    .allergies-page .allergy-records-card {
+        padding: 26px;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+    .allergies-page {
+        width: 92%;
+        padding: 18px 0 36px;
+    }
+
+    .allergies-page .allergies-hero {
+        padding: 27px 20px 18px;
+        border-radius: 22px;
+    }
+
+    .allergies-page .allergies-hero-content .section-label {
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+    }
+
+    .allergies-page .allergies-hero-content h1 {
+        font-size: 2.45rem;
+        letter-spacing: -0.8px;
+    }
+
+    .allergies-page .allergies-hero-content > p:last-child {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .allergies-page .allergies-hero-image {
+        height: 185px;
+    }
+
+    .allergies-page .allergy-feature-card {
+        gap: 15px;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .allergies-page .allergy-feature-icon {
+        flex-basis: 56px;
+        width: 56px;
+        height: 56px;
+        border-radius: 15px;
+        font-size: 1.4rem;
+    }
+
+    .allergies-page .allergy-form-card,
+    .allergies-page .allergy-records-card {
+        padding: 19px;
+        border-radius: 20px;
+    }
+
+    .allergies-page .allergy-form-card > h2,
+    .allergies-page .allergy-records-heading h2 {
+        font-size: 1.4rem;
+    }
+
+    .allergies-page .allergy-field input,
+    .allergies-page .allergy-field select,
+    .allergies-page .allergy-field textarea {
+        font-size: 1rem;
+    }
+
+    .allergies-page .allergy-severity-options {
+        gap: 12px 16px;
+    }
+
+    .allergies-page .allergy-form-actions {
+        flex-direction: column;
+    }
+
+    .allergies-page .allergy-submit-button,
+    .allergies-page .allergy-cancel-button {
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .allergies-page .allergy-records-heading {
+        flex-direction: column;
+    }
+
+    .allergies-page .allergy-table-container {
+        overflow-x: auto;
+    }
+
+    .allergies-page .allergy-table {
+        min-width: 650px;
+    }
+
+    .allergies-page .allergy-empty-state {
+        min-height: 190px;
+        padding: 22px 14px;
+    }
+
+    .allergies-page .allergy-disclaimer {
+        padding: 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .allergies-page *,
+    .allergies-page *::before,
+    .allergies-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+
+/* Shorter hero, closer to the reference */
+.allergies-page .allergies-hero {
+    min-height: 0;
+    height: 360px;
+    padding: 34px 3.5%;
+    margin-bottom: 24px;
+    grid-template-columns: 1.2fr 0.8fr;
+    border-radius: 30px;
+}
+
+.allergies-page .allergies-hero-content .section-label {
+    margin-bottom: 18px;
+    font-size: 0.9rem;
+}
+
+.allergies-page .allergies-hero-content h1 {
+    margin-bottom: 16px;
+    font-size: clamp(2.8rem, 4vw, 4rem);
+}
+
+.allergies-page .allergies-hero-content > p:last-child {
+    max-width: 720px;
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.allergies-page .allergies-hero-image {
+    height: 260px;
+}
+
+/* Make the three feature cards more compact */
+.allergies-page .allergy-features {
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.allergies-page .allergy-feature-card {
+    min-height: 122px;
+    padding: 20px 24px;
+    gap: 20px;
+    border-radius: 24px;
+}
+
+.allergies-page .allergy-feature-icon {
+    flex-basis: 68px;
+    width: 68px;
+    height: 68px;
+    border-radius: 20px;
+    font-size: 1.7rem;
+}
+
+.allergies-page .allergy-feature-card h2 {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+}
+
+.allergies-page .allergy-feature-card p {
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+/* Bring the workspace closer to the mockup */
+.allergies-page .allergy-workspace {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.55fr);
+    gap: 20px;
+}
+
+.allergies-page .allergy-form-card,
+.allergies-page .allergy-records-card {
+    padding: 26px;
+    border-radius: 26px;
+}
+
+.allergies-page .allergy-form-card > h2,
+.allergies-page .allergy-records-heading h2 {
+    font-size: 1.5rem;
+}
+
+.allergies-page .allergy-form-card > p,
+.allergies-page .allergy-records-heading p {
+    margin-bottom: 22px;
+    font-size: 1rem;
+}
+
+/* Smaller form fields */
+.allergies-page .allergy-field {
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.allergies-page .allergy-field label,
+.allergies-page .allergy-severity-field legend {
+    font-size: 0.98rem;
+}
+
+.allergies-page .allergy-field input,
+.allergies-page .allergy-field select,
+.allergies-page .allergy-field textarea {
+    min-height: 54px;
+    padding: 12px 16px;
+    border-radius: 13px;
+    font-size: 1rem;
+}
+
+.allergies-page .allergy-field textarea {
+    min-height: 100px;
+}
+
+.allergies-page .allergy-severity-options {
+    gap: 12px 18px;
+}
+
+.allergies-page .allergy-severity-options label {
+    font-size: 0.98rem;
+}
+
+/* Smaller buttons */
+.allergies-page .allergy-submit-button,
+.allergies-page .allergy-cancel-button {
+    min-height: 50px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+/* Tighter records table and empty state */
+.allergies-page .allergy-records-heading {
+    margin-bottom: 20px;
+}
+
+.allergies-page .allergy-record-count {
+    padding: 12px 15px;
+    font-size: 0.95rem;
+}
+
+.allergies-page .allergy-table th,
+.allergies-page .allergy-table td {
+    padding: 14px 12px;
+    font-size: 0.95rem;
+}
+
+.allergies-page .allergy-empty-state {
+    min-height: 200px;
+    margin-top: 14px;
+    border-radius: 20px;
+}
+
+.allergies-page .allergy-empty-state > i {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+}
+
+.allergies-page .allergy-empty-state h3 {
+    font-size: 1.1rem;
+}
+
+.allergies-page .allergy-empty-state p {
+    font-size: 0.98rem;
+}
+
+.allergies-page .allergy-disclaimer {
+    margin-top: 20px;
+    padding: 16px 18px;
+    font-size: 0.95rem;
+}
+
+/* Preserve responsive layout */
+@media (max-width: 800px) {
+    .allergies-page .allergies-hero {
+        height: auto;
+        grid-template-columns: 1fr;
+        padding: 30px 24px 20px;
+    }
+
+    .allergies-page .allergies-hero-image {
+        height: 220px;
+    }
+
+    .allergies-page .allergy-features {
+        grid-template-columns: 1fr;
+    }
+
+    .allergies-page .allergy-workspace {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .allergies-page .allergies-hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .allergies-page .allergy-form-card,
+    .allergies-page .allergy-records-card {
+        padding: 19px;
+    }
+
+    .allergies-page .allergy-feature-card {
+        padding: 18px;
+    }
+}
+
+
+/* Allergy severity badges */
+.allergy-severity-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.severity-mild {
+    background: #d0f1e5;
+    color: #087b60;
+}
+
+.severity-moderate {
+    background: #ffebc2;
+    color: #805600;
+}
+
+.severity-severe {
+    background: #ffe0dd;
+    color: #c62828;
+}
+
+/* Allergy action buttons */
+.allergy-edit-button,
+.allergy-delete-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin: 2px;
+    border: 1px solid #d5e2e9;
+    border-radius: 9px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.allergy-edit-button {
+    color: #173f5f;
+}
+
+.allergy-delete-button {
+    border-color: #ffcaca;
+    color: #d93025;
+}
+
+.allergy-edit-button:hover {
+    background: #edf7fb;
+}
+
+.allergy-delete-button:hover {
+    background: #fff0ef;
+}
+
+.allergy-edit-button:focus-visible,
+.allergy-delete-button:focus-visible {
+    outline: 3px solid #8bd6cd;
+    outline-offset: 2px;
+}

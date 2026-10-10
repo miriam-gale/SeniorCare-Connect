@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>SeniorCare Connect | Allergy Tracker</title>
+</head>
+
+<body>
+    <header class="page-header">
+        <a href="../index.html" class="logo">
+            <img src="../images/logo.png" alt="SeniorCare Connect logo">
+            <span>SeniorCare Connect</span>
+        </a>
+
+        <button
+            class="page-menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="page-navigation"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="page-navigation" id="page-navigation">
+            <a href="../index.html">Home</a>
+            <a href="medications.html">Medications</a>
+            <a href="symptoms.html">Symptoms</a>
+            <a href="allergies.html" aria-current="page">Allergies</a>
+            <a href="triage.html">Triage</a>
+            <a href="find-care.html">Find Care</a>
+            <a href="health-report.html">Health Report</a>
+            <a href="healthcare-provider.html">Providers</a>
+        </nav>
+
+        <div class="account-menu" id="account-menu">
+            <button
+                type="button"
+                class="account-avatar-button"
+                id="account-avatar-button"
+                aria-label="Open account menu"
+                aria-expanded="false"
+                aria-controls="account-dropdown"
+            >
+                <span class="account-avatar" id="account-avatar"
+                      aria-hidden="true">MG</span>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown" hidden>
+                <div class="account-dropdown-identity">
+                    <strong id="account-dropdown-name">Miriam Gale</strong>
+                    <span id="account-dropdown-role">Caregiver</span>
+                </div>
+
+                <div class="account-dropdown-divider"></div>
+
+                <a href="profile.html">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    My Profile
+                </a>
+
+                <a href="profile.html#account-settings">
+                    <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                    Account Settings
+                </a>
+
+                <button type="button" id="account-sign-out">
+                    <i class="fa-solid fa-right-from-bracket"
+                       aria-hidden="true"></i>
+                    Sign Out
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="allergies-page">
+
+        <!-- Hero section -->
+        <section class="allergies-hero">
+            <div class="allergies-hero-content">
+                <p class="section-label">HEALTH MANAGEMENT</p>
+                <h1>Allergy Tracker</h1>
+                <p>
+                    Keep track of allergies and reactions to help you and
+                    your healthcare providers make safer, more informed
+                    decisions.
+                </p>
+            </div>
+
+            <div class="allergies-hero-image">
+                <img
+                    src="../images/allergies-hero.png"
+                    alt="Medical shield surrounded by common allergy symbols"
+                >
+            </div>
+        </section>
+
+        <!-- Feature cards -->
+        <section class="allergy-features"
+                 aria-label="Benefits of allergy tracking">
+
+            <article class="allergy-feature-card">
+                <div class="allergy-feature-icon">
+                    <i class="fa-solid fa-shield-heart"
+                       aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h2>Record Allergies</h2>
+                    <p>Add details about allergies and reactions.</p>
+                </div>
+            </article>
+
+            <article class="allergy-feature-card">
+                <div class="allergy-feature-icon">
+                    <i class="fa-solid fa-file-medical"
+                       aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h2>Stay Prepared</h2>
+                    <p>Keep an up-to-date list for appointments and emergencies.</p>
+                </div>
+            </article>
+
+            <article class="allergy-feature-card">
+                <div class="allergy-feature-icon">
+                    <i class="fa-solid fa-users"
+                       aria-hidden="true"></i>
+                </div>
+                <div>
+                    <h2>Reduce Risks</h2>
+                    <p>Help healthcare providers make safer care decisions.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Allergy form and records -->
+        <section class="allergy-workspace">
+
+            <section class="allergy-form-card">
+                <h2 id="allergy-form-heading">Add an Allergy</h2>
+                <p>Enter details about the allergy and your reaction.</p>
+
+                <form id="allergy-form">
+                    <div class="allergy-field">
+                        <label for="allergy-name">Allergy Name
+                            <span aria-hidden="true">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="allergy-name"
+                            name="allergyName"
+                            placeholder="e.g. Peanuts, Pollen, Penicillin"
+                            maxlength="100"
+                            required
+                        >
+                    </div>
+
+                    <div class="allergy-field">
+                        <label for="allergy-type">Type / Category
+                            <span aria-hidden="true">*</span>
+                        </label>
+                        <select id="allergy-type" name="allergyType" required>
+                            <option value="">Select a type</option>
+                            <option value="Food">Food</option>
+                            <option value="Medication">Medication</option>
+                            <option value="Environmental">Environmental</option>
+                            <option value="Insect">Insect sting or bite</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="allergy-field">
+                        <label for="allergy-reaction">Reaction
+                            <span aria-hidden="true">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="allergy-reaction"
+                            name="reaction"
+                            placeholder="e.g. Rash, itching, swelling"
+                            maxlength="250"
+                            required
+                        >
+                    </div>
+
+                    <fieldset class="allergy-severity-field">
+                        <legend>Severity
+                            <span aria-hidden="true">*</span>
+                        </legend>
+
+                        <div class="allergy-severity-options">
+                            <label>
+                                <input type="radio" name="severity"
+                                       value="Mild" required>
+                                Mild
+                            </label>
+
+                            <label>
+                                <input type="radio" name="severity"
+                                       value="Moderate">
+                                Moderate
+                            </label>
+
+                            <label>
+                                <input type="radio" name="severity"
+                                       value="Severe">
+                                Severe
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="allergy-field">
+                        <label for="allergy-notes">Notes
+                            <span class="allergy-optional">(optional)</span>
+                        </label>
+                        <textarea
+                            id="allergy-notes"
+                            name="notes"
+                            rows="3"
+                            maxlength="500"
+                            placeholder="Additional details, known triggers, or advice from a healthcare professional"
+                        ></textarea>
+                    </div>
+
+                    <p id="allergy-form-message"
+                       class="allergy-message"
+                       role="status"
+                       aria-live="polite"></p>
+
+                    <div class="allergy-form-actions">
+                        <button type="submit"
+                                class="allergy-submit-button"
+                                id="allergy-submit-button">
+                            <i class="fa-solid fa-plus"
+                               aria-hidden="true"></i>
+                            Add Allergy
+                        </button>
+
+                        <button type="button"
+                                class="allergy-cancel-button"
+                                id="allergy-cancel-button" hidden>
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="allergy-records-card">
+                <div class="allergy-records-heading">
+                    <div>
+                        <h2>Your Allergies</h2>
+                        <p>View, edit, or delete your allergy records.</p>
+                    </div>
+
+                    <span class="allergy-record-count"
+                          id="allergy-record-count">
+                        0 allergies recorded
+                    </span>
+                </div>
+
+                <div class="allergy-table-container">
+                    <table class="allergy-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Allergy</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Reaction</th>
+                                <th scope="col">Severity</th>
+                                <th scope="col">Notes</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="allergy-list"></tbody>
+                    </table>
+
+                    <div class="allergy-empty-state"
+                         id="allergy-empty-state">
+                        <i class="fa-regular fa-file-lines"
+                           aria-hidden="true"></i>
+                        <h3>No allergies recorded yet.</h3>
+                        <p>Use the form to add your first allergy.</p>
+                    </div>
+                </div>
+
+                <p class="allergy-disclaimer">
+                    Keep this list up to date and share it with your
+                    healthcare professional. If you experience difficulty
+                    breathing or swelling of the throat after exposure to
+                    an allergen, seek emergency medical help immediately.
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/account-menu.js"></script>
+    <script src="../js/allergies.js"></script>
+</body>
+</html>
