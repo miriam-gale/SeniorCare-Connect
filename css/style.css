@@ -7328,3 +7328,104 @@ body:has(.allergies-page) {
 }
 
 
+/* Role-based dashboard links */
+.role-dashboard-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.role-dashboard-links .profile-quick-link {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    padding: 18px 20px;
+    border: 1px solid #d9e5ec;
+    border-radius: 16px;
+    background: #ffffff;
+    color: #17324d;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.role-dashboard-links .profile-quick-link:hover,
+.role-dashboard-links .profile-quick-link:focus-visible {
+    background: #f0fafa;
+    border-color: #078b9a;
+    outline: none;
+}
+
+
+.signin-container {
+            max-width: 620px;
+            margin: 60px auto;
+            padding: 32px;
+            background: #ffffff;
+            border: 1px solid #dce7ec;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(20, 55, 70, 0.08);
+        }
+
+        .signin-container h1 {
+            color: #17324d;
+            margin-bottom: 10px;
+        }
+
+        .signin-intro {
+            color: #607586;
+            margin-bottom: 28px;
+        }
+
+        .signin-form label {
+            display: block;
+            margin: 18px 0 8px;
+            font-weight: 600;
+            color: #17324d;
+        }
+
+        .signin-form input,
+        .signin-form select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd9e1;
+            border-radius: 10px;
+            font: inherit;
+        }
+
+        .signin-form button {
+            width: 100%;
+            margin-top: 26px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #078b98;
+            color: white;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .signin-form button:hover {
+            background: #066e7a;
+        }
+
+        .signin-message {
+            margin-top: 16px;
+            color: #b42318;
+        }
+
+        .signin-back {
+            display: inline-block;
+            margin-top: 20px;
+            color: #087f8c;
+        }
+
+        @media (max-width: 700px) {
+            .signin-container {
+                margin: 24px 16px;
+                padding: 22px;
+            }
+        }
+

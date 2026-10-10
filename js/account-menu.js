@@ -23,6 +23,22 @@ document.addEventListener("DOMContentLoaded", function () {
         role: "Family Member"
     };
 
+    // Create the Sign In link.
+    const signInLink = document.createElement("a");
+    signInLink.id = "account-sign-in";
+    signInLink.textContent = "Sign In";
+    signInLink.href = window.location.pathname.includes("/pages/")
+        ? "sign-in.html"
+        : "pages/sign-in.html";
+
+    signInLink.style.alignItems = "center";
+    signInLink.style.padding = "12px 16px";
+    signInLink.style.color = "#078b98";
+    signInLink.style.textDecoration = "none";
+    signInLink.style.fontSize = "inherit";
+
+    signOutButton.parentNode.insertBefore(signInLink, signOutButton);
+
     function getInitials(name) {
         const words = name.trim().split(/\s+/).filter(Boolean);
 
@@ -37,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function loadAccountDetails() {
-        let profile = { ...defaultProfile };
+        let profile = null;
 
         try {
             const saved = localStorage.getItem("seniorcareProfile");
@@ -45,15 +61,26 @@ document.addEventListener("DOMContentLoaded", function () {
             if (saved) {
                 const parsed = JSON.parse(saved);
 
-                if (parsed && typeof parsed === "object" &&
-                    !Array.isArray(parsed)) {
-                    profile = { ...defaultProfile, ...parsed };
+                if (
+                    parsed &&
+                    typeof parsed === "object" &&
+                    !Array.isArray(parsed) &&
+                    typeof parsed.name === "string" &&
+                    parsed.name.trim() &&
+                    typeof parsed.email === "string" &&
+                    parsed.email.trim()
+                ) {
+                    profile = parsed;
                 }
             }
         } catch (error) {
             console.error("Unable to load account details:", error);
         }
 
+        const isSignedIn = profile !== null;
+
+        // Use Guest details when no valid profile is saved.
+        const name = isSignedIn ? profile.name.trim() : "Guest";
         const validRoles = [
             "Care Recipient",
             "Family Member",
@@ -61,18 +88,22 @@ document.addEventListener("DOMContentLoaded", function () {
             "Healthcare Provider"
         ];
 
-        if (!validRoles.includes(profile.role)) {
-            profile.role = defaultProfile.role;
-        }
+        const role = isSignedIn && validRoles.includes(profile.role)
+            ? profile.role
+            : isSignedIn
+                ? defaultProfile.role
+                : "Not signed in";
 
-        const name =
-            typeof profile.name === "string" && profile.name.trim()
-                ? profile.name.trim()
-                : defaultProfile.name;
-
-        avatar.textContent = getInitials(name);
+        avatar.textContent = isSignedIn ? getInitials(name) : "?";
         nameDisplay.textContent = name;
-        roleDisplay.textContent = profile.role;
+        roleDisplay.textContent = role;
+
+        // Use hidden attributes AND explicit display styles.
+        signInLink.hidden = isSignedIn;
+        signInLink.style.display = isSignedIn ? "none" : "flex";
+
+        signOutButton.hidden = !isSignedIn;
+        signOutButton.style.display = isSignedIn ? "" : "none";
     }
 
     function closeMenu() {
@@ -102,10 +133,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     signOutButton.addEventListener("click", function () {
         const confirmed = window.confirm(
-            "Return to the SeniorCare Connect homepage?"
+            "Are you sure you want to sign out?"
         );
 
         if (confirmed) {
+            localStorage.removeItem("seniorcareProfile");
+
+            loadAccountDetails();
+            closeMenu();
+
             window.location.href =
                 window.location.pathname.includes("/pages/")
                     ? "../index.html"
@@ -113,7 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    
     window.addEventListener("profileUpdated", loadAccountDetails);
 
     loadAccountDetails();

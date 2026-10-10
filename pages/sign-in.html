@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | SeniorCare Connect</title>
+    <link rel="stylesheet" href="../css/style.css">
+    
+</head>
+<body>
+    <main class="signin-container">
+        <p class="eyebrow">SENIORCARE CONNECT</p>
+        <h1>Welcome back</h1>
+        <p class="signin-intro">
+            Enter your details to continue to your care dashboard.
+        </p>
+
+        <form id="signin-form" class="signin-form">
+            <label for="signin-name">Full name</label>
+            <input
+                type="text"
+                id="signin-name"
+                name="name"
+                autocomplete="name"
+                required
+            >
+
+            <label for="signin-email">Email address</label>
+            <input
+                type="email"
+                id="signin-email"
+                name="email"
+                autocomplete="email"
+                required
+            >
+
+            <label for="signin-role">I am a</label>
+            <select id="signin-role" name="role" required>
+                <option value="Care Recipient">Care Recipient</option>
+                <option value="Family Member">Family Member</option>
+                <option value="Caregiver">Caregiver</option>
+                <option value="Healthcare Provider">Healthcare Provider</option>
+            </select>
+
+            <button type="submit">Continue</button>
+            <p id="signin-message" class="signin-message" role="status"></p>
+        </form>
+
+        <a class="signin-back" href="../index.html">
+            ← Back to homepage
+        </a>
+    </main>
+
+    <script src="../js/sign-in.js"></script>
+</body>
+</html>
