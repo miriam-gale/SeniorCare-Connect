@@ -30,12 +30,52 @@
     <nav class="page-navigation" id="page-navigation">
         <a href="../index.html">Home</a>
         <a href="medications.html" aria-current="page">Medications</a>
-        <a href="symptoms.html">Health Records</a>
+        <a href="symptoms.html">Symptoms</a>
+        <a href="allergies.html">Allergies</a>
         <a href="triage.html">Triage</a>
         <a href="find-care.html">Find Care</a>
         <a href="health-report.html">Health Report</a>
         <a href="healthcare-provider.html">Providers</a>
     </nav>
+
+    <div class="account-menu" id="account-menu">
+        <button
+            type="button"
+            class="account-avatar-button"
+            id="account-avatar-button"
+            aria-label="Open account menu"
+            aria-expanded="false"
+            aria-controls="account-dropdown"
+        >
+            <span class="account-avatar" id="account-avatar"
+                  aria-hidden="true">MG</span>
+        </button>
+
+        <div class="account-dropdown" id="account-dropdown" hidden>
+            <div class="account-dropdown-identity">
+                <strong id="account-dropdown-name">Miriam Gale</strong>
+                <span id="account-dropdown-role">Family Member</span>
+            </div>
+
+            <div class="account-dropdown-divider"></div>
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                My Profile
+            </a>
+
+            <a href="profile.html#account-settings">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                Account Settings
+            </a>
+
+            <button type="button" id="account-sign-out">
+                <i class="fa-solid fa-right-from-bracket"
+                   aria-hidden="true"></i>
+                Sign Out
+            </button>
+        </div>
+    </div>
 </header>
 
     
@@ -195,9 +235,9 @@
 
 
 </main>
-
 <script src="../js/main.js"></script>
 <script src="../js/medications.js"></script>
+<script src="../js/account-menu.js"></script>
   </body>
 
 </html>

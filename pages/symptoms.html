@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>SeniorCare Connect | Symptom Tracker</title>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="page-header">
+        <a href="../index.html" class="logo">
+            <img src="../images/logo.png" alt="SeniorCare Connect logo">
+            <span>SeniorCare Connect</span>
+        </a>
+
+        <button
+            class="page-menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="page-navigation"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="page-navigation" id="page-navigation">
+    <a href="../index.html">Home</a>
+    <a href="medications.html">Medications</a>
+    <a href="symptoms.html">Symptoms</a>
+    <a href="allergies.html">Allergies</a>
+    <a href="triage.html">Triage</a>
+    <a href="find-care.html">Find Care</a>
+    <a href="health-report.html">Health Report</a>
+    <a href="healthcare-provider.html">Providers</a>
+    <a href="profile.html">My Profile</a>
+</nav>
+
+
+<div class="account-menu" id="account-menu">
+    <button
+        type="button"
+        class="account-avatar-button"
+        id="account-avatar-button"
+        aria-label="Open account menu"
+        aria-expanded="false"
+        aria-controls="account-dropdown"
+    >
+        <span class="account-avatar" id="account-avatar" aria-hidden="true">
+            MG
+        </span>
+    </button>
+
+    <div class="account-dropdown" id="account-dropdown" hidden>
+        <div class="account-dropdown-identity">
+            <strong id="account-dropdown-name">Miriam Gale</strong>
+            <span id="account-dropdown-role">Caregiver</span>
+        </div>
+
+        <div class="account-dropdown-divider"></div>
+
+        <a href="profile.html">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+            My Profile
+        </a>
+
+        <a href="profile.html#account-settings">
+            <i class="fa-solid fa-gear" aria-hidden="true"></i>
+            Account Settings
+        </a>
+
+        <button type="button" id="account-sign-out">
+            <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+            Sign Out
+        </button>
+    </div>
+</div>
+
+    </header>
+
+    <main class="symptoms-page">
+
+        <!-- Hero section -->
+        <section class="symptoms-hero">
+
+            <div class="symptoms-hero-content">
+                <p class="section-label">HEALTH MANAGEMENT</p>
+
+                <h1>Symptom Tracker</h1>
+
+                <p class="symptoms-intro">
+                    Record and monitor symptoms to understand patterns
+                    and share helpful information with healthcare providers.
+                </p>
+            </div>
+
+            <div
+            class="symptoms-hero-visual"
+            role="img"
+            aria-label="Medical illustration of a health checklist, thermometer, and symptom icons"
+></div>
+
+        </section>
+
+        <!-- Summary cards -->
+        <section class="symptom-summary">
+
+            <article class="symptom-summary-card">
+                <div class="symptom-summary-icon">
+                    <i class="fa-regular fa-clipboard"
+                       aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <h2>Log Symptoms</h2>
+                    <p>Record how you feel each day.</p>
+                </div>
+            </article>
+
+            <article class="symptom-summary-card">
+                <div class="symptom-summary-icon">
+                    <i class="fa-solid fa-chart-line"
+                       aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <h2>Track Trends</h2>
+                    <p>See changes over time.</p>
+                </div>
+            </article>
+
+            <article class="symptom-summary-card">
+                <div class="symptom-summary-icon">
+                    <i class="fa-solid fa-stethoscope"
+                       aria-hidden="true"></i>
+                </div>
+
+                <div>
+                    <h2>Share with Providers</h2>
+                    <p>Keep a clear record for appointments.</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Main workspace -->
+        <section class="symptom-workspace">
+
+            <!-- Add symptom form -->
+            <section class="symptom-form-section">
+                <h2>Add a Symptom</h2>
+
+                <p>
+                    Record what you are experiencing and how severe it feels.
+                </p>
+
+                <form id="symptom-form">
+
+                    <div class="symptom-form-group">
+                        <label for="symptom-name">Symptom</label>
+
+                        <select id="symptom-name"
+                                name="symptom-name"
+                                required>
+                            <option value="">Select a symptom</option>
+                            <option value="Headache">Headache</option>
+                            <option value="Stomach pain">Stomach pain</option>
+                            <option value="Nausea">Nausea</option>
+                            <option value="Dizziness">Dizziness</option>
+                            <option value="Cough">Cough</option>
+                            <option value="Fatigue">Fatigue</option>
+                            <option value="Fever">Fever</option>
+                            <option value="Shortness of breath">
+                                Shortness of breath
+                            </option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="symptom-form-group">
+                        <label for="symptom-date">Date</label>
+
+                        <input
+                            type="date"
+                            id="symptom-date"
+                            name="symptom-date"
+                            required
+                        >
+                    </div>
+
+                    <fieldset class="severity-fieldset">
+                        <legend>Severity</legend>
+
+                        <p class="severity-help">
+                            Choose the level that best describes how you feel.
+                        </p>
+
+                        <div class="severity-options">
+
+                            <label class="severity-option severity-mild">
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="1"
+                                    required
+                                >
+                                <span class="severity-number">1</span>
+                                <span>Mild</span>
+                            </label>
+
+                            <label class="severity-option severity-moderate">
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="2"
+                                >
+                                <span class="severity-number">2</span>
+                                <span>Moderate</span>
+                            </label>
+
+                            <label class="severity-option severity-severe">
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="3"
+                                >
+                                <span class="severity-number">3</span>
+                                <span>Severe</span>
+                            </label>
+
+                            <label class="severity-option severity-very-severe">
+                                <input
+                                    type="radio"
+                                    name="severity"
+                                    value="4"
+                                >
+                                <span class="severity-number">4</span>
+                                <span>Very severe</span>
+                            </label>
+
+                        </div>
+                    </fieldset>
+
+                    <div class="symptom-form-group">
+                        <label for="symptom-notes">
+                            Notes <span>(optional)</span>
+                        </label>
+
+                        <textarea
+                            id="symptom-notes"
+                            name="symptom-notes"
+                            rows="4"
+                            placeholder="When did it start? How long did it last? What did you notice?"
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="symptom-submit-button">
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                         Add Symptom
+                        </button>
+                        
+                        <button type="button" id="cancel-edit-button" hidden>
+                            Cancel Edit
+                        </button>
+
+                </form>
+            </section>
+
+            <!-- Recent symptoms and trend chart -->
+            <div class="symptom-results">
+
+                <section class="recent-symptoms-section">
+
+                    <div class="symptom-section-heading">
+                        <div>
+                            <h2 id="symptom-list-heading">Recent Symptoms</h2>
+                            <p>Review the symptoms you have recorded.</p>
+                        </div>
+
+                        <button type="button" id="view-all-symptoms">
+                            View All
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div class="symptom-table-container">
+                        <table class="symptom-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Symptom</th>
+                                    <th scope="col">Severity</th>
+                                    <th scope="col">Notes</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="symptom-list">
+                                <!-- JavaScript will insert symptom rows here. -->
+                            </tbody>
+                        </table>
+
+                        <div id="symptom-empty-message">
+                            <i class="fa-regular fa-clipboard"
+                               aria-hidden="true"></i>
+
+                            <h3>No symptoms recorded yet</h3>
+
+                            <p>
+                                Add a symptom to begin tracking how you feel.
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="symptom-trends-section">
+
+                    <div class="symptom-section-heading">
+                        <div>
+                            <h2>Symptom Trends</h2>
+                            <p>Review recorded symptoms over the last 7 days.</p>
+                        </div>
+
+                        <label class="visually-hidden" for="trend-filter">
+                            Filter symptom trends
+                        </label>
+
+                        <select id="trend-filter">
+                            <option value="all">All Symptoms</option>
+                            <option value="Headache">Headache</option>
+                            <option value="Stomach pain">Stomach pain</option>
+                            <option value="Nausea">Nausea</option>
+                            <option value="Dizziness">Dizziness</option>
+                            <option value="Cough">Cough</option>
+                            <option value="Fatigue">Fatigue</option>
+                            <option value="Fever">Fever</option>
+                            <option value="Shortness of breath">
+                                Shortness of breath
+                            </option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    
+<div id="symptom-chart-placeholder">
+    <p id="symptom-chart-message">
+        Your symptom trend chart will appear here
+        after symptom records are added.
+    </p>
+</div>
+
+<div id="symptom-chart-container" hidden>
+    <canvas
+        id="symptom-trend-chart"
+        role="img"
+        aria-label="Bar chart showing the number of symptom records for each day over the last seven days"
+    ></canvas>
+</div>
+
+
+                </section>
+
+            </div>
+
+        </section>
+
+        <p class="symptom-disclaimer">
+            This tracker records reported symptoms and does not diagnose
+            medical conditions. Seek urgent medical care for severe or
+            concerning symptoms.
+        </p>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/symptoms.js"></script>
+<script src="../js/account-menu.js"></script>
+
+</body>
+</html>

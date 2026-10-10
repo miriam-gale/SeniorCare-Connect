@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <link rel="stylesheet" href="../css/style.css">
+
+    <title>SeniorCare Connect | Profile </title>
+</head>
+
+
+
+<body>
+
+    
+<header class="page-header">
+    <a href="../index.html" class="logo">
+        <img src="../images/logo.png" alt="SeniorCare Connect logo">
+        <span>SeniorCare Connect</span>
+    </a>
+
+    <button
+        class="page-menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="page-navigation"
+    >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <nav class="page-navigation" id="page-navigation">
+        <a href="../index.html">Home</a>
+        <a href="medications.html">Medications</a>
+        <a href="symptoms.html">Health Records</a>
+        <a href="triage.html">Triage</a>
+        <a href="find-care.html">Find Care</a>
+        <a href="health-report.html">Health Report</a>
+        <a href="healthcare-provider.html">Providers</a>
+    </nav>
+
+    <div class="account-menu" id="account-menu">
+        <button
+            type="button"
+            class="account-avatar-button"
+            id="account-avatar-button"
+            aria-label="Open account menu"
+            aria-expanded="false"
+            aria-controls="account-dropdown"
+        >
+            <span class="account-avatar" id="account-avatar"
+                  aria-hidden="true">MG</span>
+        </button>
+
+        <div class="account-dropdown" id="account-dropdown" hidden>
+            <div class="account-dropdown-identity">
+                <strong id="account-dropdown-name">Miriam Gale</strong>
+                <span id="account-dropdown-role">Family Member</span>
+            </div>
+
+            <div class="account-dropdown-divider"></div>
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                My Profile
+            </a>
+
+            <a href="profile.html#account-settings">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                Account Settings
+            </a>
+
+            <button type="button" id="account-sign-out">
+                <i class="fa-solid fa-right-from-bracket"
+                   aria-hidden="true"></i>
+                Sign Out
+            </button>
+        </div>
+    </div>
+</header>
+
+    <main class="profile-page">
+        <section class="profile-heading">
+            <p class="profile-eyebrow">MY ACCOUNT</p>
+            <h1>My Profile</h1>
+            <p>Manage your personal information and account preferences.</p>
+        </section>
+
+        <section class="profile-card" id="account-settings">
+            <div class="profile-identity">
+                <div class="profile-avatar" id="profile-avatar"
+                     aria-hidden="true">MG</div>
+
+                <div>
+                    <h2 id="profile-display-name">Miriam Gale</h2>
+                    <p id="profile-display-role">Family Member</p>
+                    <p class="profile-status">SeniorCare Connect Member</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="profile-section-heading">
+                <div>
+                    <h2>Personal Information</h2>
+                    <p>Keep your details up to date.</p>
+                </div>
+
+                <button type="button" id="edit-profile-button"
+                        class="profile-button">
+                    <i class="fa-solid fa-pen" aria-hidden="true"></i>
+                    Edit Profile
+                </button>
+            </div>
+
+            <form id="profile-form">
+                <div class="profile-form-grid">
+                    <div class="profile-field">
+                        <label for="profile-name">Full Name</label>
+                        <input type="text" id="profile-name" name="name"
+                               required maxlength="100" disabled>
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="profile-email">Email Address</label>
+                        <input type="email" id="profile-email" name="email"
+                               required maxlength="254" disabled>
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="profile-phone">Phone Number</label>
+                        <input type="tel" id="profile-phone" name="phone"
+                               maxlength="30" disabled>
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="profile-dob">Date of Birth</label>
+                        <input type="date" id="profile-dob"
+                               name="dateOfBirth" disabled>
+                    </div>
+                    
+                    <div class="profile-field">
+                      <label for="profile-role">Account Role</label>
+                      <select id="profile-role" name="role" disabled>
+                        <option value="Care Recipient">Care Recipient</option>
+                        <option value="Family Member">Family Member</option>
+                        <option value="Caregiver">Caregiver</option>
+                        <option value="Healthcare Provider">Healthcare Provider</option>
+                      </select>
+                    </div>
+
+                </div>
+
+                <p id="profile-message" class="profile-message"
+                   role="status" aria-live="polite"></p>
+
+                <div class="profile-form-actions"
+                     id="profile-form-actions" hidden>
+                    <button type="submit" class="profile-button">
+                        Save Changes
+                    </button>
+
+                    <button type="button" id="cancel-profile-button"
+                            class="profile-button profile-button-secondary">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="profile-card">
+            <h2>My Health Tools</h2>
+            <p class="profile-section-description">
+                Quickly access your health records.
+            </p>
+
+            <div class="profile-quick-links">
+                <a class="profile-quick-link" href="medications.html">
+                    <i class="fa-solid fa-pills" aria-hidden="true"></i>
+                    <span>Medications</span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </a>
+
+                <a class="profile-quick-link" href="symptoms.html">
+                    <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+                    <span>Symptoms</span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </a>
+
+                <a class="profile-quick-link" href="allergies.html">
+                    <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+                    <span>Allergies</span>
+                    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="profile-card">
+            <h2>Account Settings</h2>
+            <p>Finished using SeniorCare Connect?</p>
+
+            <button type="button" id="sign-out-button"
+                    class="profile-button profile-signout-button">
+                <i class="fa-solid fa-right-from-bracket"
+                   aria-hidden="true"></i>
+                Sign Out
+            </button>
+
+            <p class="profile-demo-note">
+                This is a prototype. Sign out does not provide real
+                account authentication or security.
+            </p>
+        </section>
+    </main>
+
+    
+
+  <script src="../js/main.js"></script>
+<script src="../js/account-menu.js"></script>
+<script src="../js/profile.js"></script>
+</body>
+</html>

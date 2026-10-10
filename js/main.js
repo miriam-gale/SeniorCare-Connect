@@ -1,46 +1,50 @@
 
-const menuButton = document.querySelector(".menu-button");
-const navigation = document.querySelector(".navigation");
-const menuIcon = menuButton.querySelector("i");
+"use strict";
 
-menuButton.addEventListener("click", function () {
-    const isOpen = navigation.classList.toggle("show-menu");
 
-    if (isOpen) {
-        menuIcon.classList.replace("fa-bars", "fa-xmark");
-        menuButton.setAttribute("aria-label", "Close navigation menu");
-    } else {
-        menuIcon.classList.replace("fa-xmark", "fa-bars");
-        menuButton.setAttribute("aria-label", "Open navigation menu");
+document.addEventListener("DOMContentLoaded", function () {
+    // Support both header class names used across the pages.
+    const menuButton = document.querySelector(
+        ".page-menu-button, .menu-button"
+    );
+
+    const navigation = document.querySelector(
+        "#page-navigation, .page-navigation, .navigation"
+    );
+
+    if (!menuButton || !navigation) {
+        console.error("Navigation menu button or navigation element was not found.");
+        return;
     }
+
+    const menuIcon = menuButton.querySelector("i");
+
+    menuButton.addEventListener("click", function () {
+        const isOpen = navigation.classList.toggle("show-menu");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+
+        if (menuIcon) {
+            menuIcon.classList.toggle("fa-bars", !isOpen);
+            menuIcon.classList.toggle("fa-xmark", isOpen);
+        }
+    });
+
+    // Close the menu when a navigation link is selected.
+    navigation.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navigation.classList.remove("show-menu");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
+
+            if (menuIcon) {
+                menuIcon.classList.add("fa-bars");
+                menuIcon.classList.remove("fa-xmark");
+            }
+        });
+    });
 });
-
-
-const profileButton = document.querySelector("#profile-button");
-const profileDropdown = document.querySelector("#profile-dropdown");
-
-if (profileButton && profileDropdown) {
-
-    profileButton.addEventListener("click", function () {
-        const isExpanded =
-            profileButton.getAttribute("aria-expanded") === "true";
-
-        profileButton.setAttribute("aria-expanded", String(!isExpanded));
-        profileDropdown.hidden = isExpanded;
-    });
-
-    document.addEventListener("click", function (event) {
-        if (!event.target.closest(".profile-menu")) {
-            profileDropdown.hidden = true;
-            profileButton.setAttribute("aria-expanded", "false");
-        }
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            profileDropdown.hidden = true;
-            profileButton.setAttribute("aria-expanded", "false");
-            profileButton.focus();
-        }
-    });
-}
