@@ -127,6 +127,9 @@ Potential future development includes:
 
 [SeniorCare Connect on GitHub](https://github.com/miriam-gale/SeniorCare-Connect)
 
+## Github pages
+[SeniorCare Connect on GitHub]( https://miriam-gale.github.io/SeniorCare-Connect/)
+
 ## Author
 
 Developed as a web technology project by **Miriam Wepiya Gale**.
