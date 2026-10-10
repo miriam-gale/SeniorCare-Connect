@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Care | SeniorCare Connect</title>
+    <meta name="description"
+          content="Explore healthcare facilities in Accra and Greater Accra with SeniorCare Connect.">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+>
+</head>
+
+<body class="find-care-page">
+
+    
+<!-- HEADER -->
+<header class="page-header">
+
+    <a href="../index.html" class="logo">
+        <img
+            src="../images/logo.png"
+            alt=""
+            class="logo-image"
+        >
+        <span>SeniorCare Connect</span>
+    </a>
+
+    <button
+        class="page-menu-button"
+        id="page-menu-button"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="page-navigation"
+    >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <nav
+        class="page-navigation"
+        id="page-navigation"
+        aria-label="Main navigation"
+    >
+        <a href="../index.html">Home</a>
+        <a href="medications.html">Medications</a>
+        <a href="symptoms.html">Symptoms</a>
+        <a href="allergies.html">Allergies</a>
+        <a href="triage.html">Triage</a>
+        <a href="find-care.html" aria-current="page">Find Care</a>
+        <a href="health-report.html">Health Report</a>
+        <a href="healthcare-provider.html">Providers</a>
+    </nav>
+
+    <div class="account-menu">
+        <button
+            class="account-avatar-button"
+            id="account-avatar-button"
+            type="button"
+            aria-label="Open account menu"
+            aria-expanded="false"
+            aria-controls="account-dropdown"
+        >
+            <span class="account-avatar" id="account-avatar">MG</span>
+            <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+
+        <div
+            class="account-dropdown"
+            id="account-dropdown"
+            hidden
+        >
+            <p id="account-dropdown-name">Your Name</p>
+            <span id="account-dropdown-role">Care Recipient</span>
+
+            <a href="profile.html">
+                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                My Profile
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                Account Settings
+            </a>
+
+            <button type="button" id="account-sign-out">
+                <i class="fa-solid fa-right-from-bracket"
+                   aria-hidden="true"></i>
+                Sign Out
+            </button>
+        </div>
+    </div>
+
+</header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="find-care-hero">
+            <div class="find-care-hero-overlay">
+                <div class="find-care-hero-content">
+
+                    <span class="find-care-eyebrow">
+                        <i class="fa-solid fa-shield-heart"
+                           aria-hidden="true"></i>
+                        YOUR HEALTH, YOUR CARE
+                    </span>
+
+                    <h1>Find the Care You Need</h1>
+
+                    <p>
+                        Search for healthcare facilities and providers
+                        in Accra and Greater Accra. Get contact
+                        information, locations and available services.
+                    </p>
+
+                    <div class="find-care-benefits">
+                        <div class="find-care-benefit">
+                            <span class="find-care-benefit-icon">
+                                <i class="fa-solid fa-magnifying-glass"
+                                   aria-hidden="true"></i>
+                            </span>
+                            <span>Search by name, specialty or location</span>
+                        </div>
+
+                        <div class="find-care-benefit">
+                            <span class="find-care-benefit-icon">
+                                <i class="fa-solid fa-location-dot"
+                                   aria-hidden="true"></i>
+                            </span>
+                            <span>Find hospitals, clinics and health centres</span>
+                        </div>
+
+                        <div class="find-care-benefit">
+                            <span class="find-care-benefit-icon">
+                                <i class="fa-solid fa-phone"
+                                   aria-hidden="true"></i>
+                            </span>
+                            <span>Get contact details and official websites</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN DIRECTORY LAYOUT -->
+        <section class="find-care-layout" id="facility-directory">
+
+            <div class="find-care-main-column">
+
+                <!-- SEARCH AND FILTERS -->
+                <form class="find-care-search-panel" id="facility-search-form">
+
+                    <div class="find-care-search-row">
+                        <label class="visually-hidden" for="facility-search">
+                            Search facilities
+                        </label>
+
+                        <div class="find-care-search-box">
+                            <i class="fa-solid fa-magnifying-glass"
+                               aria-hidden="true"></i>
+
+                            <input type="search"
+                                   id="facility-search"
+                                   placeholder="Search facility name, specialty or keyword..."
+                                   autocomplete="off">
+                        </div>
+
+                        <button type="submit" class="find-care-search-button">
+                            Search
+                        </button>
+                    </div>
+
+                    <div class="find-care-filter-row">
+
+                        <div class="find-care-filter">
+                            <label for="facility-location">
+                                <i class="fa-solid fa-location-dot"
+                                   aria-hidden="true"></i>
+                                Location
+                            </label>
+
+                            <select id="facility-location">
+                                <option value="">All locations</option>
+                                <option value="accra">Accra</option>
+                                <option value="legon">Legon</option>
+                                <option value="korle bu">Korle Bu</option>
+                                <option value="ridge">Ridge</option>
+                            </select>
+                        </div>
+
+                        <div class="find-care-filter">
+                            <label for="facility-type">
+                                <i class="fa-solid fa-hospital"
+                                   aria-hidden="true"></i>
+                                Facility type
+                            </label>
+
+                            <select id="facility-type">
+                                <option value="">All facility types</option>
+                                <option value="teaching hospital">
+                                    Teaching hospital
+                                </option>
+                                <option value="regional hospital">
+                                    Regional hospital
+                                </option>
+                                <option value="medical centre">
+                                    Medical centre
+                                </option>
+                                <option value="general hospital">
+                                    General hospital
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="find-care-filter">
+                            <label for="facility-specialty">
+                                <i class="fa-solid fa-stethoscope"
+                                   aria-hidden="true"></i>
+                                Specialty / Service
+                            </label>
+
+                            <select id="facility-specialty">
+                                <option value="">All specialties</option>
+                                <option value="emergency">Emergency care</option>
+                                <option value="general">General healthcare</option>
+                                <option value="specialist">Specialist care</option>
+                            </select>
+                        </div>
+
+                        <button type="button"
+                                id="facility-reset-button"
+                                class="find-care-clear-button">
+                            <i class="fa-solid fa-rotate-left"
+                               aria-hidden="true"></i>
+                            Clear filters
+                        </button>
+
+                    </div>
+                </form>
+
+                <!-- RESULTS HEADING -->
+                <div class="find-care-results-heading">
+                    <div>
+                        <h2>Healthcare facilities</h2>
+                        <p id="facility-results-count" aria-live="polite">
+                            Explore facilities in Accra and Greater Accra
+                        </p>
+                    </div>
+
+                    <div class="find-care-sort">
+                        <label for="facility-sort">Sort by</label>
+                        <select id="facility-sort">
+                            <option value="name">Facility name</option>
+                            <option value="location">Location</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- FACILITY CARDS -->
+                <div class="find-care-grid" id="facility-list">
+
+                    <article class="find-care-card"
+                             data-name="Korle Bu Teaching Hospital"
+                             data-location="korle bu"
+                             data-type="teaching hospital"
+                             data-specialty="general emergency specialist">
+
+                        <div class="find-care-card-icon">
+                            <i class="fa-solid fa-hospital"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <span class="find-care-facility-type">
+                            Teaching Hospital
+                        </span>
+
+                        <h3>Korle Bu Teaching Hospital</h3>
+
+                        <p class="find-care-address">
+                            <i class="fa-solid fa-location-dot"
+                               aria-hidden="true"></i>
+                            Korle Bu, Accra
+                        </p>
+
+                        <p class="find-care-description">
+                            A major teaching and referral hospital.
+                            Confirm specific services directly.
+                        </p>
+
+                        <div class="find-care-card-actions">
+                            <a href="https://www.kbth.gov.gh/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fa-solid fa-globe"
+                                   aria-hidden="true"></i>
+                                Official website
+                            </a>
+                        </div>
+
+                        <a href="https://www.kbth.gov.gh/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="find-care-details-button">
+                            Visit facility website
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <article class="find-care-card"
+                             data-name="Greater Accra Regional Hospital Ridge"
+                             data-location="ridge"
+                             data-type="regional hospital"
+                             data-specialty="general emergency specialist">
+
+                        <div class="find-care-card-icon">
+                            <i class="fa-solid fa-hospital-user"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <span class="find-care-facility-type">
+                            Regional Hospital
+                        </span>
+
+                        <h3>Greater Accra Regional Hospital (Ridge)</h3>
+
+                        <p class="find-care-address">
+                            <i class="fa-solid fa-location-dot"
+                               aria-hidden="true"></i>
+                            Ridge, Accra
+                        </p>
+
+                        <p class="find-care-description">
+                            A regional hospital. Contact the facility
+                            to confirm current services and availability.
+                        </p>
+
+                        <div class="find-care-card-actions">
+                            <a href="https://garh.gov.gh/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fa-solid fa-globe"
+                                   aria-hidden="true"></i>
+                                Official website
+                            </a>
+                        </div>
+
+                        <a href="https://garh.gov.gh/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="find-care-details-button">
+                            Visit facility website
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <article class="find-care-card"
+                             data-name="University of Ghana Medical Centre UGMC"
+                             data-location="legon"
+                             data-type="medical centre"
+                             data-specialty="general emergency specialist">
+
+                        <div class="find-care-card-icon">
+                            <i class="fa-solid fa-user-doctor"
+                               aria-hidden="true"></i>
+                        </div>
+
+                        <span class="find-care-facility-type">
+                            Medical Centre
+                        </span>
+
+                        <h3>University of Ghana Medical Centre (UGMC)</h3>
+
+                        <p class="find-care-address">
+                            <i class="fa-solid fa-location-dot"
+                               aria-hidden="true"></i>
+                            Legon, Accra
+                        </p>
+
+                        <p class="find-care-description">
+                            A medical centre. Visit its official website
+                            to confirm services and appointment details.
+                        </p>
+
+                        <div class="find-care-card-actions">
+                            <a href="https://ugmedicalcentre.org/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                <i class="fa-solid fa-globe"
+                                   aria-hidden="true"></i>
+                                Official website
+                            </a>
+                        </div>
+
+                        <a href="https://ugmedicalcentre.org/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="find-care-details-button">
+                            Visit facility website
+                            <i class="fa-solid fa-arrow-right"
+                               aria-hidden="true"></i>
+                        </a>
+                    </article>
+
+                    <p id="facility-empty-state" hidden>
+                        No facilities match your search.
+                        Try changing your filters.
+                    </p>
+
+                </div>
+
+                <p class="find-care-disclaimer">
+                    <i class="fa-solid fa-circle-info"
+                       aria-hidden="true"></i>
+                    Facility information may change. Contact the
+                    facility directly to confirm its services,
+                    opening hours and appointment requirements.
+                </p>
+
+            </div>
+
+            <!-- RIGHT SIDEBAR -->
+            <aside class="find-care-sidebar">
+
+                <section class="find-care-sidebar-card">
+                    <div class="find-care-sidebar-heading">
+                        <i class="fa-solid fa-map-location-dot"
+                           aria-hidden="true"></i>
+                        <h2>Facilities near you</h2>
+                    </div>
+
+                    <div
+    id="facility-map"
+    class="find-care-map"
+    role="region"
+    aria-label="Map showing healthcare facility locations"
+></div>
+
+                    <p class="find-care-map-note">
+    Select a facility marker to view its name and location.
+    Use the map controls to zoom in or out.
+</p>
+                </section>
+
+                <section class="find-care-sidebar-card find-care-urgent-card">
+                    <div class="find-care-sidebar-heading">
+                        <i class="fa-solid fa-triangle-exclamation"
+                           aria-hidden="true"></i>
+                        <h2>Need urgent care?</h2>
+                    </div>
+
+                    <p>
+                        If you believe you are experiencing a medical
+                        emergency, seek emergency assistance immediately.
+                    </p>
+
+                    <a href="https://nas.gov.gh/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="find-care-emergency-link">
+                        <i class="fa-solid fa-phone"
+                           aria-hidden="true"></i>
+                        Ghana emergency services
+                    </a>
+                </section>
+
+                <section class="find-care-sidebar-card find-care-resources">
+                    <div class="find-care-sidebar-heading">
+                        <i class="fa-solid fa-book-open"
+                           aria-hidden="true"></i>
+                        <h2>Helpful resources</h2>
+                    </div>
+
+                    <a href="https://www.ghs.gov.gh/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Ghana Health Service
+                        <i class="fa-solid fa-arrow-up-right-from-square"
+                           aria-hidden="true"></i>
+                    </a>
+
+                    <a href="https://www.nhis.gov.gh/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        National Health Insurance Scheme
+                        <i class="fa-solid fa-arrow-up-right-from-square"
+                           aria-hidden="true"></i>
+                    </a>
+                </section>
+
+                <section class="find-care-sidebar-card find-care-important-note">
+                    <div class="find-care-sidebar-heading">
+                        <i class="fa-solid fa-circle-info"
+                           aria-hidden="true"></i>
+                        <h2>Important note</h2>
+                    </div>
+
+                    <p>
+                        SeniorCare Connect provides a directory,
+                        not a diagnosis or a guarantee of service
+                        availability. Confirm details with each facility.
+                    </p>
+                </section>
+
+            </aside>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+        <p>
+            &copy; 2026 SeniorCare Connect.
+            Your health and wellbeing matter.
+        </p>
+    </footer>
+
+
+
+    <script src="../js/main.js"></script>
+    <script src="../js/account-menu.js"></script>
+    <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+></script>
+    <script src="../js/find-care.js"></script>
+
+</body>
+</html>

@@ -5537,3 +5537,641 @@ body:has(.allergies-page) {
         padding: 20px;
     }
 }
+
+
+/* ========================================
+   FIND CARE — HERO SECTION
+======================================== */
+
+.find-care-hero {
+    position: relative;
+    min-height: 300px;
+    background-image: url("../images/fin-care-hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.find-care-hero-overlay {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    padding: 35px 5%;
+    background: linear-gradient(
+        90deg,
+        rgba(237, 248, 252, 0.98) 0%,
+        rgba(237, 248, 252, 0.93) 35%,
+        rgba(237, 248, 252, 0.55) 55%,
+        rgba(237, 248, 252, 0.02) 76%
+    );
+}
+
+.find-care-hero-content {
+    width: 100%;
+    max-width: 650px;
+}
+
+.find-care-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 12px;
+    color: #086e83;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.find-care-hero h1 {
+    margin: 0 0 12px;
+    color: #102f4b;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.12;
+}
+
+.find-care-hero-content > p {
+    max-width: 560px;
+    margin: 0;
+    color: #29475f;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.find-care-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.find-care-benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 190px;
+    color: #24455e;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.find-care-benefit-icon {
+    display: inline-flex;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c7e8e8;
+    border-radius: 50%;
+    background: #e0f5f3;
+    color: #087e80;
+    font-size: 1rem;
+}
+
+/* Improve hero readability on smaller screens */
+@media (max-width: 768px) {
+    .find-care-hero,
+    .find-care-hero-overlay {
+        min-height: 320px;
+    }
+
+    .find-care-hero {
+        background-position: 62% center;
+    }
+
+    .find-care-hero-overlay {
+        padding: 30px 22px;
+        background: linear-gradient(
+            90deg,
+            rgba(237, 248, 252, 0.98) 0%,
+            rgba(237, 248, 252, 0.91) 58%,
+            rgba(237, 248, 252, 0.45) 100%
+        );
+    }
+
+    .find-care-benefits {
+        gap: 12px;
+    }
+
+    .find-care-benefit {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .find-care-hero,
+    .find-care-hero-overlay {
+        min-height: 350px;
+    }
+
+    .find-care-hero h1 {
+        font-size: 2rem;
+    }
+
+    .find-care-hero-content > p {
+        font-size: 0.93rem;
+    }
+}
+
+
+
+/* ========================================
+   FIND CARE PAGE LAYOUT
+======================================== */
+
+.find-care-page {
+    background: #f7fafc;
+    color: #173451;
+}
+
+.find-care-page *,
+.find-care-page *::before,
+.find-care-page *::after {
+    box-sizing: border-box;
+}
+
+.find-care-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.1fr) minmax(280px, 0.9fr);
+    gap: 22px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 4%;
+}
+
+.find-care-main-column,
+.find-care-sidebar {
+    min-width: 0;
+}
+
+.find-care-search-panel {
+    padding: 18px;
+    background: #edf7fb;
+    border: 1px solid #dcecf3;
+    border-radius: 14px;
+}
+
+.find-care-search-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 130px;
+    gap: 10px;
+}
+
+.find-care-search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 0 14px;
+    background: #fff;
+    border: 1px solid #cedde6;
+    border-radius: 8px;
+}
+
+.find-care-search-box input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 0;
+    color: #173451;
+    background: transparent;
+    border: 0;
+    outline: none;
+    font: inherit;
+}
+
+.find-care-search-button {
+    padding: 12px 18px;
+    color: #fff;
+    background: #075579;
+    border: 0;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.find-care-search-button:hover {
+    background: #064361;
+}
+
+.find-care-filter-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+    align-items: end;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.find-care-filter {
+    min-width: 0;
+}
+
+.find-care-filter label {
+    display: block;
+    margin-bottom: 7px;
+    color: #173451;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.find-care-filter label i {
+    margin-right: 5px;
+    color: #087e80;
+}
+
+.find-care-filter select,
+.find-care-sort select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    color: #29475f;
+    background: #fff;
+    border: 1px solid #cedde6;
+    border-radius: 7px;
+    font: inherit;
+}
+
+.find-care-clear-button {
+    padding: 10px 4px;
+    color: #087eaa;
+    background: transparent;
+    border: 0;
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.find-care-results-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 22px 0 16px;
+}
+
+.find-care-results-heading h2 {
+    margin: 0 0 5px;
+    color: #12334f;
+    font-size: 1.5rem;
+}
+
+.find-care-results-heading p {
+    margin: 0;
+    color: #607487;
+    font-size: 0.92rem;
+}
+
+.find-care-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.find-care-sort label {
+    white-space: nowrap;
+    font-size: 0.88rem;
+}
+
+.find-care-sort select {
+    width: auto;
+}
+
+/* FACILITY CARDS */
+
+.find-care-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.find-care-card {
+    min-width: 0;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dfebf1;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgba(20, 53, 75, 0.035);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.find-care-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(20, 53, 75, 0.08);
+}
+
+.find-care-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 12px;
+    color: #087e80;
+    background: #e5f6f4;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.find-care-facility-type {
+    display: inline-block;
+    margin-bottom: 9px;
+    padding: 5px 10px;
+    color: #087e80;
+    background: #e0f5f1;
+    border-radius: 20px;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.find-care-card h3 {
+    margin: 0 0 12px;
+    color: #12334f;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.find-care-card p {
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.find-care-card .find-care-address {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 0 10px;
+    color: #607487;
+}
+
+.find-care-address i {
+    margin-top: 4px;
+    color: #087e80;
+}
+
+.find-care-description {
+    color: #526b7f;
+}
+
+.find-care-card-actions {
+    margin: 16px 0;
+}
+
+.find-care-card-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #087e80;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.find-care-details-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 11px;
+    color: #087e80;
+    background: #fff;
+    border: 1px solid #dce8ed;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.find-care-details-button:hover {
+    background: #edf9f7;
+}
+
+.find-care-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 18px;
+    color: #5e7283;
+    font-size: 0.84rem;
+    line-height: 1.6;
+}
+
+.find-care-disclaimer i {
+    margin-top: 4px;
+    color: #087eaa;
+}
+
+/* RIGHT SIDEBAR */
+
+.find-care-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.find-care-sidebar-card {
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #dfebf1;
+    border-radius: 13px;
+}
+
+.find-care-sidebar-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.find-care-sidebar-heading > i {
+    color: #087e80;
+    font-size: 1.15rem;
+}
+
+.find-care-sidebar-heading h2 {
+    margin: 0;
+    color: #12334f;
+    font-size: 1.02rem;
+}
+
+.find-care-map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    padding: 20px;
+    color: #087e80;
+    background:
+        linear-gradient(135deg, rgba(222, 244, 239, 0.9), rgba(229, 241, 250, 0.9));
+    border-radius: 9px;
+    text-align: center;
+}
+
+.find-care-map-placeholder > i {
+    font-size: 2rem;
+}
+
+.find-care-map-placeholder p {
+    margin-bottom: 5px;
+    color: #173451;
+    font-weight: 700;
+}
+
+.find-care-map-placeholder span,
+.find-care-map-note {
+    color: #607487;
+    font-size: 0.83rem;
+    line-height: 1.5;
+}
+
+.find-care-urgent-card {
+    background: #fff5f4;
+    border-color: #f6dfdc;
+}
+
+.find-care-urgent-card .find-care-sidebar-heading > i {
+    color: #d64242;
+}
+
+.find-care-emergency-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 13px;
+    color: #a52e2e;
+    background: #ffe5e3;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.find-care-resources {
+    background: #f0f8fc;
+}
+
+.find-care-resources > a {
+    display: block;
+    margin-top: 12px;
+    color: #087eaa;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.find-care-resources > a i {
+    margin-left: 4px;
+    font-size: 0.8rem;
+}
+
+.find-care-important-note {
+    background: #f0f8fc;
+}
+
+.find-care-important-note p,
+.find-care-urgent-card p {
+    color: #5b7082;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ACCESSIBILITY */
+
+.find-care-page a:focus-visible,
+.find-care-page button:focus-visible,
+.find-care-page input:focus-visible,
+.find-care-page select:focus-visible {
+    outline: 3px solid #48b8b0;
+    outline-offset: 3px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 1050px) {
+    .find-care-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .find-care-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+}
+
+@media (max-width: 700px) {
+    .find-care-layout {
+        padding: 18px 16px;
+    }
+
+    .find-care-search-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .find-care-filter-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .find-care-clear-button {
+        justify-self: start;
+    }
+
+    .find-care-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .find-care-results-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .find-care-sort {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .find-care-sidebar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+
+/* FIND CARE — LEAFLET MAP */
+
+.find-care-map {
+    width: 100%;
+    height: 280px;
+    min-height: 240px;
+    border-radius: 9px;
+    border: 1px solid #dce8ed;
+    overflow: hidden;
+    background: #e7f1ed;
+}
+
+.find-care-map .leaflet-popup-content-wrapper {
+    border-radius: 10px;
+}
+
+.find-care-map .leaflet-popup-content {
+    color: #173451;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .find-care-map {
+        height: 260px;
+    }
+}
