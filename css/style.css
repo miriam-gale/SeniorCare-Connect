@@ -3969,3 +3969,1571 @@ body:has(.allergies-page) {
     outline: 3px solid #8bd6cd;
     outline-offset: 2px;
 }
+
+
+/* SENIORCARE CONNECT - TRIAGE PAGE */
+
+.triage-page {
+    background: #f7fafc;
+    color: #173451;
+}
+
+/* Hero section */
+
+.triage-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 250px;
+    overflow: hidden;
+    background: linear-gradient(110deg, #f1fafa, #d8f2f2);
+}
+
+.triage-hero-content {
+    padding: 35px 5vw;
+}
+
+.triage-eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #138d91;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.triage-hero-content h1 {
+    margin: 0 0 12px;
+    color: #102d50;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.15;
+}
+
+.triage-hero-content p {
+    max-width: 570px;
+    margin: 0;
+    color: #435d77;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.triage-hero-image {
+    height: 250px;
+    align-self: stretch;
+    overflow: hidden;
+}
+
+.triage-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+}
+
+/* Main assessment workspace */
+
+.triage-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.95fr);
+    gap: 20px;
+    max-width: 1450px;
+    margin: 20px auto;
+    padding: 0 28px;
+    align-items: stretch;
+}
+
+.triage-assessment-card,
+.triage-emergency-card,
+.triage-result-card {
+    border: 1px solid #dce8ef;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.triage-assessment-card {
+    min-width: 0;
+    padding: 24px;
+}
+
+/* Assessment progress */
+
+.triage-progress {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-bottom: 32px;
+}
+
+.triage-progress-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #73859b;
+    text-align: center;
+}
+
+.triage-progress-step:not(:last-child)::after {
+    position: absolute;
+    top: 17px;
+    left: calc(50% + 24px);
+    width: calc(100% - 48px);
+    height: 2px;
+    background: #dce5ec;
+    content: "";
+}
+
+.triage-progress-step > span {
+    z-index: 1;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 2px solid #dce5ec;
+    border-radius: 50%;
+    background: #fff;
+    font-weight: 600;
+}
+
+.triage-progress-step.active {
+    color: #12516a;
+    font-weight: 700;
+}
+
+.triage-progress-step.active > span {
+    border-color: #218f84;
+    background: #218f84;
+    color: #fff;
+}
+
+.triage-progress-step p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Form and symptom choices */
+
+#triage-form fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.triage-step legend {
+    margin-bottom: 7px;
+    color: #122e50;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.triage-step-description {
+    margin: 0 0 18px;
+    color: #61758c;
+}
+
+.triage-symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.triage-symptom-option {
+    display: flex;
+    min-height: 58px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #dce7ef;
+    border-radius: 9px;
+    background: #fbfdfe;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.triage-symptom-option:hover {
+    border-color: #76c8c1;
+    background: #f0fbf9;
+}
+
+.triage-symptom-option:focus-within {
+    outline: 3px solid #9ddbd5;
+    outline-offset: 2px;
+}
+
+.triage-symptom-option input {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    margin-left: auto;
+    accent-color: #218f84;
+    cursor: pointer;
+}
+
+.triage-symptom-option i {
+    width: 25px;
+    flex-shrink: 0;
+    color: #1782a7;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+.triage-symptom-option span {
+    color: #284c70;
+    font-size: 0.94rem;
+    line-height: 1.35;
+}
+
+.triage-form-message {
+    min-height: 0;
+    margin: 0;
+    color: #c62828;
+    font-size: 0.9rem;
+}
+
+.triage-form-message:not(:empty) {
+    margin-top: 12px;
+}
+
+.triage-form-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.triage-primary-button {
+    display: inline-flex;
+    min-width: 190px;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 9px;
+    background: #218f84;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.triage-primary-button:hover {
+    background: #16766e;
+}
+
+.triage-primary-button:focus-visible {
+    outline: 3px solid #8bd6cd;
+    outline-offset: 3px;
+}
+
+/* Right sidebar */
+
+.triage-sidebar {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.triage-emergency-card {
+    display: flex;
+    gap: 16px;
+    padding: 22px;
+    border-color: #ffcaca;
+    background: #fff5f5;
+}
+
+.triage-emergency-icon {
+    flex-shrink: 0;
+    color: #c62828;
+    font-size: 2rem;
+}
+
+.triage-emergency-card h2 {
+    margin: 2px 0 12px;
+    color: #b71c1c;
+    font-size: 1.2rem;
+}
+
+.triage-emergency-card p {
+    margin: 0 0 10px;
+    color: #843333;
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+.triage-emergency-card .triage-emergency-examples {
+    margin-bottom: 0;
+    color: #52667e;
+}
+
+.triage-result-card {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 15px;
+    padding: 22px;
+    border-color: #d2eee8;
+    background: #f0faf8;
+}
+
+.triage-result-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    color: #15536a;
+    font-size: 1.2rem;
+}
+
+.triage-result-card h2 i {
+    font-size: 1.7rem;
+}
+
+.triage-result-placeholder {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 18px;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+}
+
+.triage-result-placeholder > i {
+    margin-bottom: 20px;
+    color: #68bce7;
+    font-size: 4rem;
+}
+
+.triage-result-placeholder h3 {
+    margin: 0 0 12px;
+    color: #153451;
+    font-size: 1.05rem;
+}
+
+.triage-result-placeholder p {
+    margin: 0 0 12px;
+    color: #526a83;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.triage-result-placeholder .triage-result-disclaimer {
+    margin-bottom: 0;
+}
+
+/* Understanding your results */
+
+.triage-care-guide {
+    max-width: 1450px;
+    margin: 26px auto 40px;
+    padding: 0 28px;
+}
+
+.triage-care-guide > h2 {
+    margin: 0 0 16px;
+    color: #122e50;
+    font-size: 1.3rem;
+}
+
+.triage-care-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.triage-care-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 14px;
+    border: 1px solid;
+    border-radius: 11px;
+}
+
+.triage-care-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 1.35rem;
+}
+
+.triage-care-card h3 {
+    margin: 4px 0 8px;
+    font-size: 0.98rem;
+}
+
+.triage-care-card p {
+    margin: 0;
+    color: #455c73;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.triage-care-card.emergency {
+    border-color: #ffd6d6;
+    background: #fff3f3;
+}
+
+.triage-care-card.emergency .triage-care-icon {
+    background: #ffd9dc;
+    color: #bd2525;
+}
+
+.triage-care-card.emergency h3 {
+    color: #b71c1c;
+}
+
+.triage-care-card.urgent {
+    border-color: #ffe2b6;
+    background: #fff8ed;
+}
+
+.triage-care-card.urgent .triage-care-icon {
+    background: #ffebbd;
+    color: #9a6100;
+}
+
+.triage-care-card.urgent h3 {
+    color: #a34816;
+}
+
+.triage-care-card.routine {
+    border-color: #cfe7ff;
+    background: #f1f8ff;
+}
+
+.triage-care-card.routine .triage-care-icon {
+    background: #d5eaff;
+    color: #1768b2;
+}
+
+.triage-care-card.routine h3 {
+    color: #1768b2;
+}
+
+.triage-care-card.self-care {
+    border-color: #c9eee0;
+    background: #f0fbf6;
+}
+
+.triage-care-card.self-care .triage-care-icon {
+    background: #c9f3df;
+    color: #13754b;
+}
+
+.triage-care-card.self-care h3 {
+    color: #13754b;
+}
+
+/* Footer */
+
+.triage-page .page-footer {
+    padding: 22px;
+    color: #61758c;
+    text-align: center;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 1050px) {
+    .triage-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .triage-sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .triage-care-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .triage-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .triage-hero-content {
+        padding: 28px 22px 18px;
+    }
+
+    .triage-hero-image {
+        height: 190px;
+    }
+
+    .triage-workspace,
+    .triage-care-guide {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    .triage-workspace {
+        gap: 16px;
+        margin-top: 14px;
+    }
+
+    .triage-assessment-card {
+        padding: 18px 14px;
+    }
+
+    .triage-progress {
+        margin-bottom: 25px;
+    }
+
+    .triage-progress-step p {
+        font-size: 0.72rem;
+    }
+
+    .triage-progress-step:not(:last-child)::after {
+        left: calc(50% + 20px);
+        width: calc(100% - 40px);
+    }
+
+    .triage-symptom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .triage-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .triage-care-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .triage-care-card {
+        padding: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .triage-symptom-option {
+        transition: none;
+    }
+}
+
+
+/* TRIAGE - CUSTOM SYMPTOM CHECKBOXES */
+
+.triage-symptom-option {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) 22px;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    padding: 12px 16px;
+    border: 1px solid #dce7ef;
+    border-radius: 10px;
+    background: #fbfdfe;
+    cursor: pointer;
+    transition: border-color 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Keep the symptom icon in a consistent position */
+
+.triage-symptom-option > i {
+    grid-column: 1;
+    grid-row: 1;
+    width: 28px;
+    color: #1782a7;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* Keep the symptom name aligned */
+
+.triage-symptom-option > span {
+    grid-column: 2;
+    grid-row: 1;
+    color: #284c70;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Replace the browser's default checkbox appearance */
+
+.triage-symptom-option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    display: grid;
+    grid-column: 3;
+    grid-row: 1;
+    place-content: center;
+    width: 21px;
+    height: 21px;
+    margin: 0;
+    border: 1.8px solid #9aafc0;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+}
+
+/* Draw the tick */
+
+.triage-symptom-option input[type="checkbox"]::before {
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    content: "";
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.12s ease-in-out;
+}
+
+.triage-symptom-option input[type="checkbox"]:checked {
+    border-color: #218f84;
+    background: #218f84;
+}
+
+.triage-symptom-option input[type="checkbox"]:checked::before {
+    transform: rotate(45deg) scale(1);
+}
+
+/* Highlight the entire selected card */
+
+.triage-symptom-option:has(input[type="checkbox"]:checked) {
+    border-color: #218f84;
+    background: #effaf7;
+    box-shadow: 0 0 0 1px rgba(33, 143, 132, 0.12);
+}
+
+/* Keyboard accessibility */
+
+.triage-symptom-option:focus-within {
+    outline: 3px solid #a4ded6;
+    outline-offset: 2px;
+}
+
+.triage-symptom-option input[type="checkbox"]:focus-visible {
+    outline: 2px solid #145d56;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .triage-symptom-option,
+    .triage-symptom-option input[type="checkbox"]::before {
+        transition: none;
+    }
+}
+
+
+
+.triage-question {
+    margin-bottom: 22px;
+}
+
+.triage-question > label,
+.triage-question > legend {
+    display: block;
+    margin-bottom: 10px;
+    color: #173451;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.triage-question > select {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid #cddde8;
+    border-radius: 9px;
+    background: #fff;
+    color: #284c70;
+    font: inherit;
+}
+
+.triage-question > select:focus-visible {
+    outline: 3px solid #a4ded6;
+    outline-offset: 2px;
+    border-color: #218f84;
+}
+
+.triage-severity-question {
+    min-width: 0;
+    padding: 0;
+    border: 0;
+}
+
+.triage-detail-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 14px;
+    border: 1px solid #dce7ef;
+    border-radius: 9px;
+    background: #fbfdfe;
+    cursor: pointer;
+}
+
+.triage-detail-option:has(input:checked) {
+    border-color: #218f84;
+    background: #effaf7;
+}
+
+.triage-detail-option input {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: #218f84;
+}
+
+.triage-detail-option span {
+    display: grid;
+    gap: 5px;
+    color: #284c70;
+}
+
+.triage-detail-option small {
+    color: #61758c;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.triage-form-actions-between {
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.triage-secondary-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border: 1px solid #cddde8;
+    border-radius: 9px;
+    background: #fff;
+    color: #284c70;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.triage-secondary-button:hover {
+    background: #f0f7fa;
+}
+
+.triage-secondary-button:focus-visible {
+    outline: 3px solid #a4ded6;
+    outline-offset: 2px;
+}
+
+.triage-page [hidden] {
+    display: none !important;
+}
+
+
+
+
+#triage-step-2 {
+    min-width: 0;
+    padding: 12px 4px 8px;
+    border: 0;
+}
+
+#triage-step-2 > legend {
+    width: 100%;
+    margin-bottom: 12px;
+    color: #102f50;
+    font-size: clamp(1.4rem, 2vw, 1.8rem);
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+#triage-step-2 .triage-step-description {
+    margin: 0 0 22px;
+    color: #60758d;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+#triage-step-2 .triage-question {
+    margin: 0 0 28px;
+}
+
+#triage-step-2 .triage-question > label,
+#triage-step-2 .triage-question > legend {
+    margin-bottom: 12px;
+    color: #173451;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+#triage-step-2 .triage-question > select {
+    min-height: 54px;
+    padding: 13px 16px;
+    border: 1px solid #d4e2ec;
+    border-radius: 10px;
+    background-color: #fbfdfe;
+    color: #284c70;
+    font-size: 1rem;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+#triage-step-2 .triage-question > select:hover {
+    border-color: #8bbeb9;
+}
+
+#triage-step-2 .triage-question > select:focus {
+    border-color: #218f84;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(33, 143, 132, 0.13);
+}
+
+/* Severity choices */
+
+#triage-step-2 .triage-severity-question {
+    margin-bottom: 30px;
+}
+
+#triage-step-2 .triage-severity-question > legend {
+    margin-bottom: 10px;
+}
+
+#triage-step-2 .triage-severity-question > .triage-step-description {
+    margin-bottom: 16px;
+}
+
+#triage-step-2 .triage-detail-option {
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0 0 12px;
+    padding: 18px 18px;
+    border: 1px solid #d9e5ee;
+    border-radius: 12px;
+    background: #fbfdfe;
+    transition: border-color 0.2s ease,
+                background-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+#triage-step-2 .triage-detail-option:hover {
+    border-color: #9bcac4;
+    background: #f6fbfa;
+}
+
+#triage-step-2 .triage-detail-option:has(input:checked) {
+    border-color: #218f84;
+    background: #effaf7;
+    box-shadow: 0 0 0 1px rgba(33, 143, 132, 0.12);
+}
+
+#triage-step-2 .triage-detail-option input {
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+    accent-color: #218f84;
+    cursor: pointer;
+}
+
+#triage-step-2 .triage-detail-option span {
+    gap: 7px;
+}
+
+#triage-step-2 .triage-detail-option strong {
+    color: #173d5d;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+#triage-step-2 .triage-detail-option small {
+    color: #60758d;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Back and Next buttons */
+
+#triage-step-2 .triage-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top: 1px solid #e7eef3;
+}
+
+#triage-step-2 .triage-secondary-button,
+#triage-step-2 .triage-primary-button {
+    min-width: 145px;
+    min-height: 50px;
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+#triage-step-2 .triage-secondary-button {
+    border: 1px solid #d4e2ec;
+    background: #fff;
+    color: #284c70;
+}
+
+#triage-step-2 .triage-primary-button {
+    border: 1px solid #218f84;
+    background: #218f84;
+    color: #fff;
+}
+
+#triage-step-2 .triage-secondary-button:hover {
+    background: #f1f7fa;
+}
+
+#triage-step-2 .triage-primary-button:hover {
+    background: #19796f;
+}
+
+#triage-step-2 .triage-secondary-button:focus-visible,
+#triage-step-2 .triage-primary-button:focus-visible {
+    outline: 3px solid #a4ded6;
+    outline-offset: 3px;
+}
+
+/* Validation message */
+
+#triage-step-2 .triage-form-message {
+    margin: 8px 0 16px;
+    color: #b42318;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+    #triage-step-2 {
+        padding: 4px 0;
+    }
+
+    #triage-step-2 .triage-question {
+        margin-bottom: 24px;
+    }
+
+    #triage-step-2 .triage-detail-option {
+        padding: 15px;
+    }
+
+    #triage-step-2 .triage-form-actions {
+        gap: 12px;
+    }
+
+    #triage-step-2 .triage-secondary-button,
+    #triage-step-2 .triage-primary-button {
+        min-width: 0;
+        flex: 1;
+        padding: 12px 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #triage-step-2 .triage-question > select,
+    #triage-step-2 .triage-detail-option {
+        transition: none;
+    }
+}
+
+
+/* SeniorCare Connect — refined triage review */
+#triage-step-3 .triage-review-section {
+    margin: 30px 0;
+}
+
+#triage-step-3 #triage-review-symptoms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+#triage-step-3 #triage-review-symptoms li {
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid #bce8e1;
+    background: #eaf8f5;
+    color: #087e78;
+    font-weight: 700;
+}
+
+#triage-step-3 .triage-review-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 20px 0 0;
+}
+
+#triage-step-3 .triage-review-list > div {
+    padding: 22px;
+    min-width: 0;
+    border: 1px solid #dce8ef;
+    border-radius: 16px;
+    background: #f8fbfd;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+#triage-step-3 .triage-review-list > div:hover {
+    border-color: #9ddbd3;
+    background: #f0faf7;
+}
+
+#triage-step-3 .triage-review-list dt {
+    margin-bottom: 12px;
+    color: #64798d;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+#triage-step-3 .triage-review-list dd {
+    margin: 0;
+    color: #123653;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#triage-step-3 .triage-review-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px;
+    color: #123653;
+    font-size: 1.35rem;
+}
+
+#triage-step-3 .triage-review-section h3 i {
+    color: #168f88;
+}
+
+#triage-step-3 .triage-review-reminder {
+    margin: 28px 0;
+    padding: 20px 22px;
+    border: 1px solid #d3e7f5;
+    border-radius: 14px;
+    background: #eff7fc;
+    color: #355b78;
+    line-height: 1.8;
+}
+
+#triage-step-3 .triage-review-reminder i {
+    margin-right: 8px;
+    color: #2777ad;
+}
+
+#triage-step-3 .triage-form-actions-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid #e2ebf1;
+}
+
+@media (max-width: 650px) {
+    #triage-step-3 .triage-review-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #triage-step-3 .triage-review-list > div {
+        padding: 18px;
+    }
+
+    #triage-step-3 .triage-review-reminder {
+        padding: 16px;
+    }
+
+    #triage-step-3 .triage-form-actions-between {
+        gap: 12px;
+    }
+}
+
+
+
+/* TRIAGE REVIEW — CLEANER, MORE BALANCED DESIGN */
+
+#triage-step-3 .triage-review-section {
+    margin: 26px 0;
+}
+
+#triage-step-3 .triage-review-section h3 {
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+/* Selected symptom tags */
+#triage-step-3 #triage-review-symptoms {
+    gap: 10px;
+    margin-top: 14px;
+}
+
+#triage-step-3 #triage-review-symptoms li {
+    padding: 10px 16px;
+    border-radius: 9px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Symptom detail cards */
+#triage-step-3 .triage-review-list {
+    gap: 14px;
+    margin-top: 16px;
+}
+
+#triage-step-3 .triage-review-list > div {
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(23, 52, 81, 0.04);
+}
+
+#triage-step-3 .triage-review-list > div:hover {
+    background: #f8fcfb;
+}
+
+#triage-step-3 .triage-review-list dt {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+#triage-step-3 .triage-review-list dd {
+    font-size: 1.08rem;
+    line-height: 1.45;
+}
+
+/* Information reminder */
+#triage-step-3 .triage-review-reminder {
+    margin: 24px 0;
+    padding: 16px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Back and Continue buttons */
+#triage-step-3 .triage-form-actions-between {
+    margin-top: 26px;
+    padding-top: 20px;
+    gap: 14px;
+}
+
+/* Small screens */
+@media (max-width: 650px) {
+    #triage-step-3 .triage-review-section {
+        margin: 22px 0;
+    }
+
+    #triage-step-3 .triage-review-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #triage-step-3 .triage-review-list > div {
+        padding: 16px;
+    }
+
+    #triage-step-3 .triage-review-reminder {
+        padding: 14px;
+    }
+
+    #triage-step-3 .triage-form-actions-between {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    #triage-step-3 .triage-form-actions-between button {
+        width: 100%;
+    }
+}
+
+
+
+#triage-step-4 .triage-guidance-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 26px;
+    margin: 28px 0;
+    background: #edf8f6;
+    border: 1px solid #c7e9e3;
+    border-radius: 18px;
+}
+
+#triage-step-4 .triage-guidance-icon {
+    display: flex;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 58px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #d2f0e9;
+    color: #168f83;
+    font-size: 26px;
+}
+
+#triage-step-4 .triage-guidance-card h3 {
+    margin: 2px 0 10px;
+    color: #123b59;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+#triage-step-4 .triage-guidance-card p {
+    margin: 0;
+    color: #526d82;
+    line-height: 1.75;
+}
+
+#triage-step-4 .triage-review-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+#triage-step-4 .triage-review-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: #123b59;
+    font-size: 1.25rem;
+}
+
+#triage-step-4 #triage-guidance-actions {
+    display: grid;
+    gap: 14px;
+    padding-left: 0;
+    list-style: none;
+}
+
+#triage-step-4 #triage-guidance-actions li {
+    position: relative;
+    padding: 18px 20px 18px 52px;
+    background: #f7fafc;
+    border: 1px solid #dce8f1;
+    border-radius: 12px;
+    color: #34536c;
+    line-height: 1.7;
+}
+
+#triage-step-4 #triage-guidance-actions li::before {
+    content: "✓";
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    display: flex;
+    width: 22px;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #d9f3eb;
+    color: #087d6c;
+    font-weight: 700;
+}
+
+#triage-step-4 .triage-guidance-warning {
+    margin: 24px 0;
+    padding: 22px;
+    background: #fff2f2;
+    border: 1px solid #ffcaca;
+    border-radius: 14px;
+    color: #8e2525;
+    line-height: 1.7;
+}
+
+#triage-step-4 .triage-guidance-warning h3 {
+    margin-top: 0;
+    color: #b42323;
+}
+
+#triage-step-4 #triage-guidance-warning[hidden] {
+    display: none;
+}
+
+#triage-step-4 #triage-guidance-symptoms,
+#triage-step-4 #triage-guidance-severity {
+    color: #123b59;
+    font-weight: 600;
+}
+
+#triage-result {
+    padding: 30px;
+    border-radius: 16px;
+    background: #ffffff;
+    color: #405f76;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+}
+
+#triage-result > i {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    background: #e5f6f2;
+    color: #168f83;
+    font-size: 25px;
+}
+
+#triage-result h3 {
+    margin: 0 0 16px;
+    color: #123b59;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+#triage-result h4 {
+    margin-top: 24px;
+    color: #123b59;
+    font-size: 1rem;
+}
+
+#triage-result p {
+    margin: 14px 0;
+}
+
+#triage-result ul {
+    padding-left: 22px;
+}
+
+#triage-result li {
+    margin-bottom: 12px;
+}
+
+#triage-result .triage-result-disclaimer {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #e1eaf0;
+    color: #647b8c;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+    #triage-step-4 .triage-guidance-card {
+        gap: 14px;
+        padding: 20px;
+    }
+
+    #triage-step-4 .triage-guidance-icon {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
+
+    #triage-step-4 #triage-guidance-actions li {
+        padding: 16px 16px 16px 46px;
+    }
+
+    #triage-step-4 #triage-guidance-actions li::before {
+        top: 16px;
+        left: 14px;
+    }
+
+    #triage-result {
+        padding: 22px;
+    }
+}
+
+
+
+/* Assessment summary redesign */
+
+.triage-guidance-summary {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px solid #e0eaf0;
+}
+
+.triage-summary-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.triage-summary-heading-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: #e5f5f2;
+    color: #168f83;
+    font-size: 1.3rem;
+}
+
+.triage-summary-heading h3 {
+    margin: 0 0 6px;
+    color: #123b59;
+    font-size: 1.25rem;
+}
+
+.triage-summary-heading p {
+    margin: 0;
+    color: #657d90;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.triage-assessment-summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.triage-summary-item {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid #dce8f1;
+    border-radius: 15px;
+    background: #f8fbfd;
+}
+
+.triage-summary-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 14px;
+    color: #657d90;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.triage-summary-label i {
+    color: #168f83;
+}
+
+.triage-summary-value {
+    margin: 0;
+    color: #123b59;
+    font-size: 1.05rem;
+    font-weight: 650;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.triage-summary-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin: 0;
+    padding: 17px 19px;
+    border: 1px solid #d2e7f8;
+    border-radius: 12px;
+    background: #eef6fc;
+    color: #456780;
+    font-size: 0.92rem;
+    line-height: 1.75;
+}
+
+.triage-summary-disclaimer i {
+    flex-shrink: 0;
+    margin-top: 5px;
+    color: #287fb1;
+}
+
+@media (max-width: 650px) {
+    .triage-assessment-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .triage-summary-item {
+        padding: 19px;
+    }
+
+    .triage-summary-heading h3 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Triage result panel: compact, readable layout */
+.triage-result-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: left;
+    padding: 28px;
+    gap: 18px;
+    min-height: auto;
+    height: auto;
+}
+
+.triage-result-placeholder > i {
+    align-self: flex-start;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.triage-result-placeholder h3 {
+    text-align: left;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.triage-result-placeholder p {
+    text-align: left;
+    margin: 0;
+    line-height: 1.65;
+}
+
+.triage-result-placeholder h4 {
+    margin: 12px 0 0;
+}
+
+.triage-result-placeholder ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.triage-result-placeholder li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.triage-result-placeholder .triage-result-disclaimer {
+    border-top: 1px solid #d9e7ed;
+    padding-top: 18px;
+    margin-top: 8px;
+    color: #60778a;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .triage-result-placeholder {
+        padding: 20px;
+    }
+}

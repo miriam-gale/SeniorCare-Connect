@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Symptom Triage | SeniorCare Connect</title>
+
+    <meta
+        name="description"
+        content="Answer guided symptom questions to learn about appropriate next steps for your healthcare."
+    >
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+</head>
+
+<body class="triage-page">
+
+    <!-- HEADER -->
+
+    <header class="page-header">
+
+        <a href="../index.html" class="logo">
+            <img
+                src="../images/logo.png"
+                alt=""
+                class="logo-image"
+            >
+            <span>SeniorCare Connect</span>
+        </a>
+
+        <button
+            class="page-menu-button"
+            id="page-menu-button"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="page-navigation"
+        >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav
+            class="page-navigation"
+            id="page-navigation"
+            aria-label="Main navigation"
+        >
+            <a href="../index.html">Home</a>
+            <a href="medications.html">Medications</a>
+            <a href="symptoms.html">Symptoms</a>
+            <a href="allergies.html">Allergies</a>
+            <a href="triage.html" aria-current="page">Triage</a>
+            <a href="find-care.html">Find Care</a>
+            <a href="health-report.html">Health Report</a>
+            <a href="healthcare-provider.html">Providers</a>
+        </nav>
+
+        <div class="account-menu">
+            <button
+                class="account-avatar-button"
+                id="account-avatar-button"
+                type="button"
+                aria-label="Open account menu"
+                aria-expanded="false"
+                aria-controls="account-dropdown"
+            >
+                <span class="account-avatar" id="account-avatar">MG</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div
+                class="account-dropdown"
+                id="account-dropdown"
+                hidden
+            >
+                <p id="account-dropdown-name">Your Name</p>
+                <span id="account-dropdown-role">Care Recipient</span>
+
+                <a href="profile.html">
+                    <i class="fa-regular fa-user" aria-hidden="true"></i>
+                    My Profile
+                </a>
+
+                <a href="profile.html">
+                    <i class="fa-solid fa-gear" aria-hidden="true"></i>
+                    Account Settings
+                </a>
+
+                <button type="button" id="account-sign-out">
+                    <i class="fa-solid fa-right-from-bracket"
+                       aria-hidden="true"></i>
+                    Sign Out
+                </button>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <section class="triage-hero">
+
+            <div class="triage-hero-content">
+                <span class="triage-eyebrow">HEALTH SUPPORT</span>
+
+                <h1>Symptom Triage</h1>
+
+                <p>
+                    Answer a few questions about your symptoms to get
+                    guidance on the most appropriate level of care.
+                    This tool provides general information only and
+                    does not provide a diagnosis.
+                </p>
+            </div>
+
+            <div class="triage-hero-image">
+                <img
+                    src="../images/triage-hero.png"
+                    alt="Older adult considering her health, surrounded by medical symbols"
+                >
+            </div>
+
+        </section>
+
+
+        <!--  TRIAGE WORKSPACE  -->
+
+        <section class="triage-workspace"
+                 aria-label="Symptom assessment">
+
+            <!-- Symptom assessment form -->
+
+            <section class="triage-assessment-card">
+
+                <div class="triage-progress"
+                     aria-label="Assessment progress">
+
+                    <div class="triage-progress-step active"
+                         aria-current="step">
+                        <span>1</span>
+                        <p>Your Symptoms</p>
+                    </div>
+
+                    <div class="triage-progress-step">
+                        <span>2</span>
+                        <p>Details</p>
+                    </div>
+
+                    <div class="triage-progress-step">
+                        <span>3</span>
+                        <p>Review</p>
+                    </div>
+
+                    <div class="triage-progress-step">
+                        <span>4</span>
+                        <p>Guidance</p>
+                    </div>
+
+                </div>
+
+
+                <form id="triage-form">
+
+                    <!-- STEP 1: SYMPTOMS -->
+
+                    <fieldset class="triage-step"
+                              id="triage-step-1">
+
+                        <legend>What are your main symptoms?</legend>
+
+                        <p class="triage-step-description">
+                            Select all that apply.
+                        </p>
+
+                        <div class="triage-symptom-grid">
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Fever">
+                                <i class="fa-solid fa-temperature-half"
+                                   aria-hidden="true"></i>
+                                <span>Fever</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Cough">
+                                <i class="fa-solid fa-lungs"
+                                   aria-hidden="true"></i>
+                                <span>Cough</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Shortness of breath">
+                                <i class="fa-solid fa-wind"
+                                   aria-hidden="true"></i>
+                                <span>Shortness of breath</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Chest pain">
+                                <i class="fa-solid fa-heart-pulse"
+                                   aria-hidden="true"></i>
+                                <span>Chest pain</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Headache">
+                                <i class="fa-solid fa-brain"
+                                   aria-hidden="true"></i>
+                                <span>Headache</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Dizziness">
+                                <i class="fa-solid fa-person"
+                                   aria-hidden="true"></i>
+                                <span>Dizziness</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Nausea or vomiting">
+                                <i class="fa-solid fa-stomach"
+                                   aria-hidden="true"></i>
+                                <span>Nausea or vomiting</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Stomach pain">
+                                <i class="fa-solid fa-notes-medical"
+                                   aria-hidden="true"></i>
+                                <span>Stomach pain</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Joint pain">
+                                <i class="fa-solid fa-bone"
+                                   aria-hidden="true"></i>
+                                <span>Joint pain</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Fatigue">
+                                <i class="fa-solid fa-battery-quarter"
+                                   aria-hidden="true"></i>
+                                <span>Fatigue</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Rash">
+                                <i class="fa-solid fa-hand"
+                                   aria-hidden="true"></i>
+                                <span>Rash</span>
+                            </label>
+
+                            <label class="triage-symptom-option">
+                                <input type="checkbox"
+                                       name="symptoms"
+                                       value="Other">
+                                <i class="fa-solid fa-ellipsis"
+                                   aria-hidden="true"></i>
+                                <span>Other symptom</span>
+                            </label>
+
+                        </div>
+
+                        <p id="triage-form-message"
+                           class="triage-form-message"
+                           role="alert"
+                           aria-live="polite"></p>
+
+                        <div class="triage-form-actions">
+                            <button type="button"
+                                    id="triage-next-button"
+                                    class="triage-primary-button">
+                                Next
+                                <i class="fa-solid fa-arrow-right"
+                                   aria-hidden="true"></i>
+                            </button>
+                        </div>
+
+                    </fieldset>
+
+
+
+
+<fieldset class="triage-step"
+          id="triage-step-2"
+          hidden>
+
+    <legend>Tell us more about your symptoms</legend>
+
+    <p class="triage-step-description">
+        These details help organize the information you provide.
+    </p>
+
+    <!-- Symptom duration -->
+
+    <div class="triage-question">
+        <label for="triage-duration">
+            When did your symptoms start?
+        </label>
+
+        <select id="triage-duration"
+                name="duration"
+                required>
+            <option value="">Select when symptoms started</option>
+            <option value="Today">Today</option>
+            <option value="1–3 days ago">1–3 days ago</option>
+            <option value="4–7 days ago">4–7 days ago</option>
+            <option value="More than a week ago">
+                More than a week ago
+            </option>
+        </select>
+    </div>
+
+    <!-- Perceived severity -->
+
+    <fieldset class="triage-question triage-severity-question">
+        <legend>How severe do your symptoms feel?</legend>
+
+        <p class="triage-step-description">
+            Choose the option that best describes how you feel.
+        </p>
+
+        <label class="triage-detail-option">
+            <input type="radio"
+                   name="triage-severity"
+                   value="Mild"
+                   required>
+            <span>
+                <strong>Mild</strong>
+                <small>Noticeable, but not greatly affecting daily activities.</small>
+            </span>
+        </label>
+
+        <label class="triage-detail-option">
+            <input type="radio"
+                   name="triage-severity"
+                   value="Moderate">
+            <span>
+                <strong>Moderate</strong>
+                <small>Interfering with some daily activities.</small>
+            </span>
+        </label>
+
+        <label class="triage-detail-option">
+            <input type="radio"
+                   name="triage-severity"
+                   value="Severe">
+            <span>
+                <strong>Severe</strong>
+                <small>Very distressing or making normal activities difficult.</small>
+            </span>
+        </label>
+    </fieldset>
+
+    <!-- Symptom changes -->
+
+    <div class="triage-question">
+        <label for="triage-trend">
+            How have your symptoms changed?
+        </label>
+
+        <select id="triage-trend"
+                name="trend"
+                required>
+            <option value="">Select how symptoms have changed</option>
+            <option value="Getting better">Getting better</option>
+            <option value="Staying the same">Staying the same</option>
+            <option value="Getting worse">Getting worse</option>
+            <option value="Coming and going">Coming and going</option>
+        </select>
+    </div>
+
+    <!-- New or recurring -->
+
+    <div class="triage-question">
+        <label for="triage-occurrence">
+            Is this a new or recurring problem?
+        </label>
+
+        <select id="triage-occurrence"
+                name="occurrence"
+                required>
+            <option value="">Select an option</option>
+            <option value="New">New problem</option>
+            <option value="Recurring">Recurring problem</option>
+        </select>
+    </div>
+
+    <p id="triage-details-message"
+       class="triage-form-message"
+       role="alert"
+       aria-live="polite"></p>
+
+    <div class="triage-form-actions triage-form-actions-between">
+
+        <button type="button"
+                id="triage-back-button"
+                class="triage-secondary-button">
+            <i class="fa-solid fa-arrow-left"
+               aria-hidden="true"></i>
+            Back
+        </button>
+
+        <button type="button"
+                id="triage-details-next-button"
+                class="triage-primary-button">
+            Next
+            <i class="fa-solid fa-arrow-right"
+               aria-hidden="true"></i>
+        </button>
+
+    </div>
+
+</fieldset>
+
+
+
+<!-- STEP 3: REVIEW -->
+<fieldset class="triage-step" id="triage-step-3" hidden>
+    <legend>Review your answers</legend>
+
+    <p class="triage-step-description">
+        Please check your answers before continuing to your guidance.
+        You can go back to make changes.
+    </p>
+
+    <section class="triage-review-section"
+             aria-labelledby="triage-review-symptoms-heading">
+        <h3 id="triage-review-symptoms-heading">
+            <i class="fa-solid fa-heart-pulse" aria-hidden="true"></i>
+            Selected symptoms
+        </h3>
+        <ul id="triage-review-symptoms">
+            <li>No symptoms selected yet.</li>
+        </ul>
+    </section>
+
+    <section class="triage-review-section"
+             aria-labelledby="triage-review-details-heading">
+        <h3 id="triage-review-details-heading">
+            <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
+            Symptom details
+        </h3>
+
+        <dl class="triage-review-list">
+            <div>
+                <dt>When symptoms started</dt>
+                <dd id="triage-review-duration">Not provided</dd>
+            </div>
+            <div>
+                <dt>Severity</dt>
+                <dd id="triage-review-severity">Not provided</dd>
+            </div>
+            <div>
+                <dt>How symptoms have changed</dt>
+                <dd id="triage-review-trend">Not provided</dd>
+            </div>
+            <div>
+                <dt>New or recurring</dt>
+                <dd id="triage-review-occurrence">Not provided</dd>
+            </div>
+        </dl>
+    </section>
+
+    <p class="triage-review-reminder">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        This summary is based on your answers. It is not a diagnosis.
+        If you may be experiencing a medical emergency, seek emergency
+        medical help immediately.
+    </p>
+
+    <p id="triage-review-message"
+       class="triage-form-message"
+       role="alert"
+       aria-live="polite"></p>
+
+    <div class="triage-form-actions triage-form-actions-between">
+        <button type="button"
+                id="triage-review-back-button"
+                class="triage-secondary-button">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back
+        </button>
+
+        <button type="button"
+                id="triage-review-next-button"
+                class="triage-primary-button">
+            Continue
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </button>
+    </div>
+</fieldset>
+
+<!-- STEP 4: GUIDANCE -->
+<fieldset class="triage-step" id="triage-step-4" hidden>
+    <legend>Your personalized guidance</legend>
+
+    <p class="triage-step-description">
+        Review the general guidance below based on the symptoms
+        and details you provided.
+    </p>
+
+    <!-- Guidance heading and status -->
+    <section class="triage-guidance-card"
+             aria-labelledby="triage-guidance-heading">
+
+        <div class="triage-guidance-icon" aria-hidden="true">
+            <i class="fa-solid fa-notes-medical"></i>
+        </div>
+
+        <div>
+            <h3 id="triage-guidance-heading">
+                Your next steps
+            </h3>
+
+            <p id="triage-guidance-level">
+                Complete your assessment to view your guidance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Recommended actions -->
+    <section class="triage-review-section"
+             aria-labelledby="triage-guidance-actions-heading">
+
+        <h3 id="triage-guidance-actions-heading">
+            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+            What you should do
+        </h3>
+
+        <ul id="triage-guidance-actions">
+            <li>Your recommendations will appear here.</li>
+        </ul>
+    </section>
+
+    <!-- Emergency warning -->
+    <div class="triage-guidance-warning"
+         id="triage-guidance-warning"
+         role="alert"
+         hidden>
+        <h3>
+            <i class="fa-solid fa-triangle-exclamation"
+               aria-hidden="true"></i>
+            Important safety warning
+        </h3>
+
+        <p>
+            Severe or sudden chest pain, difficulty breathing,
+            loss of consciousness, or other life-threatening
+            symptoms require immediate emergency medical help.
+            Do not wait for this assessment to finish.
+        </p>
+    </div>
+
+
+    
+<!-- Assessment summary -->
+<section class="triage-review-section triage-guidance-summary"
+         aria-labelledby="triage-guidance-summary-heading">
+
+    <div class="triage-summary-heading">
+        <div class="triage-summary-heading-icon">
+            <i class="fa-solid fa-clipboard-check"
+               aria-hidden="true"></i>
+        </div>
+
+        <div>
+            <h3 id="triage-guidance-summary-heading">
+                Assessment summary
+            </h3>
+            <p>A quick overview of your responses.</p>
+        </div>
+    </div>
+
+    <div class="triage-assessment-summary">
+
+        <article class="triage-summary-item">
+            <span class="triage-summary-label">
+                <i class="fa-solid fa-heart-pulse"
+                   aria-hidden="true"></i>
+                Symptoms reported
+            </span>
+
+            <p id="triage-guidance-symptoms"
+               class="triage-summary-value">
+                Not available
+            </p>
+        </article>
+
+        <article class="triage-summary-item">
+            <span class="triage-summary-label">
+                <i class="fa-solid fa-gauge-high"
+                   aria-hidden="true"></i>
+                Symptom severity
+            </span>
+
+            <p id="triage-guidance-severity"
+               class="triage-summary-value">
+                Not available
+            </p>
+        </article>
+
+    </div>
+
+    <p class="triage-summary-disclaimer">
+        <i class="fa-solid fa-circle-info"
+           aria-hidden="true"></i>
+        This summary is based on your answers. It is for general
+        information only and does not provide a diagnosis or replace
+        advice from a qualified healthcare professional.
+    </p>
+
+</section>
+
+    
+
+    <p class="triage-review-reminder">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        This guidance is for general information only. It does not
+        provide a diagnosis or replace advice from a qualified
+        healthcare professional.
+    </p>
+
+    <div class="triage-form-actions triage-form-actions-between">
+        <button type="button"
+                id="triage-guidance-back-button"
+                class="triage-secondary-button">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back to review
+        </button>
+
+        <button type="button"
+                id="triage-restart-button"
+                class="triage-primary-button">
+            Start again
+            <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+        </button>
+    </div>
+</fieldset>
+
+
+                </form>
+
+            </section>
+
+
+            <!-- Right-hand information panels -->
+
+            <aside class="triage-sidebar">
+
+                <section class="triage-emergency-card"
+                         aria-labelledby="triage-emergency-heading">
+
+                    <div class="triage-emergency-icon">
+                        <i class="fa-solid fa-triangle-exclamation"
+                           aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h2 id="triage-emergency-heading">
+                            Medical Emergency
+                        </h2>
+
+                        <p>
+                            If you may be experiencing a
+                            life-threatening emergency, seek emergency
+                            medical help immediately.
+                        </p>
+
+                        <p class="triage-emergency-examples">
+                            Warning signs can include severe chest pain,
+                            difficulty breathing, loss of consciousness,
+                            or uncontrolled bleeding.
+                        </p>
+                    </div>
+
+                </section>
+
+
+                <section class="triage-result-card"
+                         aria-labelledby="triage-result-heading">
+
+                    <h2 id="triage-result-heading">
+                        <i class="fa-solid fa-file-medical"
+                           aria-hidden="true"></i>
+                        Your Triage Result
+                    </h2>
+
+                    <div class="triage-result-placeholder"
+                         id="triage-result"
+                         aria-live="polite">
+
+                        <i class="fa-solid fa-clipboard-check"
+                           aria-hidden="true"></i>
+
+                        <h3>Complete the symptom assessment</h3>
+
+                        <p>
+                            Your guidance will appear here after you
+                            complete the assessment.
+                        </p>
+
+                        <p class="triage-result-disclaimer">
+                            This tool provides general information only
+                            and is not a substitute for professional
+                            medical advice.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </aside>
+
+        </section>
+
+
+        <!-- CARE LEVEL GUIDE  -->
+
+        <section class="triage-care-guide"
+                 aria-labelledby="triage-care-guide-heading">
+
+            <h2 id="triage-care-guide-heading">
+                Understanding Your Results
+            </h2>
+
+            <div class="triage-care-grid">
+
+                <article class="triage-care-card emergency">
+                    <div class="triage-care-icon">
+                        <i class="fa-solid fa-truck-medical"
+                           aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h3>Seek Emergency Care</h3>
+                        <p>
+                            Seek immediate emergency assistance for
+                            severe or life-threatening symptoms.
+                        </p>
+                    </div>
+                </article>
+
+
+                <article class="triage-care-card urgent">
+                    <div class="triage-care-icon">
+                        <i class="fa-solid fa-triangle-exclamation"
+                           aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h3>Seek Urgent Care</h3>
+                        <p>
+                            Seek prompt medical assessment for symptoms
+                            that may need urgent attention.
+                        </p>
+                    </div>
+                </article>
+
+
+                <article class="triage-care-card routine">
+                    <div class="triage-care-icon">
+                        <i class="fa-solid fa-user-doctor"
+                           aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h3>See a Doctor Soon</h3>
+                        <p>
+                            Arrange a medical appointment for symptoms
+                            that need professional assessment.
+                        </p>
+                    </div>
+                </article>
+
+
+                <article class="triage-care-card self-care">
+                    <div class="triage-care-icon">
+                        <i class="fa-solid fa-house"
+                           aria-hidden="true"></i>
+                    </div>
+
+                    <div>
+                        <h3>Self-Care at Home</h3>
+                        <p>
+                            Follow appropriate general self-care advice
+                            when symptoms are mild and no warning signs
+                            are present.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER  -->
+
+    <footer class="page-footer">
+        <p>
+            &copy; 2026 SeniorCare Connect.
+            Your health and wellbeing matter.
+        </p>
+    </footer>
+
+
+    <!-- Existing site scripts -->
+
+    <script src="../js/main.js"></script>
+<script src="../js/account-menu.js"></script>
+<script src="../js/triage.js"></script>
+
+
+
+</body>
+</html>
