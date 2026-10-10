@@ -129,7 +129,7 @@ Potential future development includes:
 
 ## Author
 
-Developed as a web technology project by **Miriam Gale**.
+Developed as a web technology project by **Miriam Wepiya Gale**.
 
 ---
 
