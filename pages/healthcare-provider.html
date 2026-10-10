@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find and manage healthcare providers with SeniorCare Connect.">
+
+    <title>Healthcare Providers | SeniorCare Connect</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="page-header">
+        <a href="../index.html" class="logo">
+            <img src="../images/logo.png" alt="" class="logo-image">
+            <span>SeniorCare Connect</span>
+        </a>
+
+        <button class="page-menu-button" id="page-menu-button"
+                aria-label="Open navigation menu" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <nav class="page-navigation" id="page-navigation"
+             aria-label="Main navigation">
+            <a href="../index.html">Home</a>
+            <a href="medications.html">Medications</a>
+            <a href="symptoms.html">Symptoms</a>
+            <a href="allergies.html">Allergies</a>
+            <a href="triage.html">Triage</a>
+            <a href="find-care.html">Find Care</a>
+            <a href="health-report.html">Health Report</a>
+            <a href="healthcare-provider.html" aria-current="page">Providers</a>
+        </nav>
+
+        <div class="account-menu" id="account-menu">
+            <button class="account-avatar-button" id="account-avatar-button"
+                    aria-label="Open account menu" aria-expanded="false">
+                <span class="account-avatar" id="account-avatar">MG</span>
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div class="account-dropdown" id="account-dropdown" hidden>
+                <p id="account-dropdown-name">Your Name</p>
+                <span id="account-dropdown-role">Care Recipient</span>
+                <a href="profile.html">My Profile</a>
+                <a href="profile.html">Account Settings</a>
+                <button type="button" id="account-sign-out">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="health-provider-page">
+
+        <!-- Hero Section -->
+        <section class="health-provider-hero">
+            <div class="health-provider-hero-content">
+                <div class="health-provider-hero-icon">
+                    <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+                </div>
+
+                <div class="health-provider-hero-text">
+                    <h1>Healthcare Providers</h1>
+                    <h2>Find and manage your healthcare providers in one place.</h2>
+                    <p>
+                        You can search for doctors, specialists, and other
+                        healthcare professionals in your area and keep track
+                        of your care team.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="health-provider-layout">
+
+            <div class="health-provider-main">
+
+                <!-- Search and Filters -->
+                <section class="health-provider-search"
+                         aria-label="Search healthcare providers">
+
+                    <form id="provider-search-form">
+                        <div class="health-provider-search-row">
+                            <label for="provider-query" class="health-provider-search-input">
+                                <i class="fa-solid fa-magnifying-glass"
+                                   aria-hidden="true"></i>
+
+                                <input type="search" id="provider-query"
+                                       placeholder="Search by name, specialty, or keyword">
+                            </label>
+
+                            <button type="submit" class="health-provider-button">
+                                <i class="fa-solid fa-magnifying-glass"
+                                   aria-hidden="true"></i>
+                                Search
+                            </button>
+                        </div>
+
+                        <div class="health-provider-filters">
+
+                            <div class="health-provider-field">
+                                <label for="provider-specialty">Specialty</label>
+                                <select id="provider-specialty">
+                                    <option value="">All Specialties</option>
+                                    <option value="Primary Care">Primary Care</option>
+                                    <option value="Cardiology">Cardiology</option>
+                                    <option value="Endocrinology">Endocrinology</option>
+                                    <option value="Geriatrics">Geriatrics</option>
+                                    <option value="Neurology">Neurology</option>
+                                </select>
+                            </div>
+
+                            <div class="health-provider-field">
+                                <label for="provider-location">Location</label>
+                                <input type="text" id="provider-location"
+                                       placeholder="Enter a city or area">
+                            </div>
+
+                            
+
+                            <button type="button" id="clear-provider-filters"
+                                    class="health-provider-clear-button">
+                                <i class="fa-solid fa-filter-circle-xmark"
+                                   aria-hidden="true"></i>
+                                Clear Filters
+                            </button>
+
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Provider Results -->
+                <section class="health-provider-results"
+                         aria-labelledby="provider-results-heading">
+
+                    <div class="health-provider-results-heading">
+                        <h2 id="provider-results-heading">Healthcare Providers</h2>
+                        <p id="provider-result-count" aria-live="polite">
+                            3 providers found
+                        </p>
+                    </div>
+
+                    <div class="health-provider-list" id="provider-list">
+
+                        <!-- Provider 1 -->
+                        <article class="health-provider-card">
+                            <img
+                                src="../images/dr-susan-donkor.png"
+                                alt="Portrait of Dr. Susan Donkor"
+                                class="health-provider-image"
+                                loading="lazy">
+
+                            <div class="health-provider-details">
+                                <div class="health-provider-name-row">
+                                    <h3>Dr. Susan Donkor, MD</h3>
+                                    <span class="provider-specialty-badge primary-care">
+                                        Primary Care
+                                    </span>
+                                </div>
+
+                                <p>
+                                    <i class="fa-solid fa-user-doctor"
+                                       aria-hidden="true"></i>
+                                    Family Medicine
+                                </p>
+
+                                <p>
+                                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                  Ridge, Accra, Ghana
+                                </p>
+
+                                <p>
+                                  <i class="fa-solid fa-car" aria-hidden="true"></i>
+                                  Location in Ridge, Accra
+                                </p>
+                            </div>
+
+                            <div class="health-provider-actions">
+                                <button type="button"
+                                        class="health-provider-button view-provider"
+                                        data-provider-id="1">
+                                    <i class="fa-regular fa-calendar"
+                                       aria-hidden="true"></i>
+                                    View Details
+                                </button>
+
+                                <button type="button"
+                                        class="health-provider-outline-button add-provider"
+                                        data-provider-id="1">
+                                    <i class="fa-solid fa-circle-plus"
+                                       aria-hidden="true"></i>
+                                    Add to My Care Team
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Provider 2 -->
+                        <article class="health-provider-card">
+                            <img
+                                src="../images/dr-james-addo.png"
+                                alt="Portrait of Dr. James Addo"
+                                class="health-provider-image"
+                                loading="lazy">
+
+                            <div class="health-provider-details">
+                                <div class="health-provider-name-row">
+                                    <h3>Dr. James Addo, MD</h3>
+                                    <span class="provider-specialty-badge cardiology">
+                                        Cardiology
+                                    </span>
+                                </div>
+
+                                <p>
+                                    <i class="fa-solid fa-user-doctor"
+                                       aria-hidden="true"></i>
+                                    Cardiologist
+                                </p>
+
+                                <p>
+                                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                  Cantonments, Accra, Ghana
+                                </p>
+
+                                <p>
+                                  <i class="fa-solid fa-car" aria-hidden="true"></i>
+                                  Location in Cantonments, Accra
+                                </p>
+                            </div>
+
+                            <div class="health-provider-actions">
+                                <button type="button"
+                                        class="health-provider-button view-provider"
+                                        data-provider-id="2">
+                                    <i class="fa-regular fa-calendar"
+                                       aria-hidden="true"></i>
+                                    View Details
+                                </button>
+
+                                <button type="button"
+                                        class="health-provider-outline-button add-provider"
+                                        data-provider-id="2">
+                                    <i class="fa-solid fa-circle-plus"
+                                       aria-hidden="true"></i>
+                                    Add to My Care Team
+                                </button>
+                            </div>
+                        </article>
+
+                        <!-- Provider 3 -->
+                        <article class="health-provider-card">
+                            <img
+                                src="../images/dr-maria-afful.png"
+                                alt="Portrait of Dr. Maria Afful"
+                                class="health-provider-image"
+                                loading="lazy">
+
+                            <div class="health-provider-details">
+                                <div class="health-provider-name-row">
+                                    <h3>Dr. Maria Afful, MD</h3>
+                                    <span class="provider-specialty-badge endocrinology">
+                                        Endocrinology
+                                    </span>
+                                </div>
+
+                                <p>
+                                    <i class="fa-solid fa-user-doctor"
+                                       aria-hidden="true"></i>
+                                    Endocrinologist
+                                </p>
+
+                                <p>
+                                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                  East Legon, Accra, Ghana
+                                </p>
+
+                               <p>
+                                <i class="fa-solid fa-car" aria-hidden="true"></i>
+                                Location in East Legon, Accra
+                              </p>
+
+                            </div>
+
+                                        <!-- Provider 4: Dr. Ama Mensah -->
+            <article class="health-provider-card">
+                <img
+                    src="../images/dr-ama-mensah.png"
+                    alt="Portrait of Dr. Ama Mensah"
+                    class="health-provider-image"
+                    loading="lazy">
+
+                <div class="health-provider-details">
+                    <div class="health-provider-name-row">
+                        <h3>Dr. Ama Mensah, MD</h3>
+                        <span class="provider-specialty-badge">
+                            Geriatrics
+                        </span>
+                    </div>
+
+                    <p>
+                        <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+                        Geriatrician
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        Ridge, Accra, Ghana
+                    </p>
+                </div>
+
+                <div class="health-provider-actions">
+                    <button
+                        type="button"
+                        class="health-provider-button view-provider"
+                        data-provider-id="4">
+                        <i class="fa-regular fa-address-card" aria-hidden="true"></i>
+                        View Details
+                    </button>
+
+                    <button
+                        type="button"
+                        class="health-provider-outline-button add-provider"
+                        data-provider-id="4">
+                        <i class="fa-solid fa-circle-plus" aria-hidden="true"></i>
+                        Add to My Care Team
+                    </button>
+                </div>
+            </article>
+
+            <!-- Provider 5: Dr. Kofi Asare -->
+            <article class="health-provider-card">
+                <img
+                    src="../images/dr-kofi-asare.png"
+                    alt="Portrait of Dr. Kofi Asare"
+                    class="health-provider-image"
+                    loading="lazy">
+
+                <div class="health-provider-details">
+                    <div class="health-provider-name-row">
+                        <h3>Dr. Kofi Asare, MD</h3>
+                        <span class="provider-specialty-badge">
+                            Neurology
+                        </span>
+                    </div>
+
+                    <p>
+                        <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
+                        Neurologist
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        Cantonments, Accra, Ghana
+                    </p>
+                </div>
+
+                <div class="health-provider-actions">
+                    <button
+                        type="button"
+                        class="health-provider-button view-provider"
+                        data-provider-id="5">
+                        <i class="fa-regular fa-address-card" aria-hidden="true"></i>
+                        View Details
+                    </button>
+
+                    <button
+                        type="button"
+                        class="health-provider-outline-button add-provider"
+                        data-provider-id="5">
+                        <i class="fa-solid fa-circle-plus" aria-hidden="true"></i>
+                        Add to My Care Team
+                    </button>
+                </div>
+            </article>
+
+                            <div class="health-provider-actions">
+                                <button type="button"
+                                        class="health-provider-button view-provider"
+                                        data-provider-id="3">
+                                    <i class="fa-regular fa-calendar"
+                                       aria-hidden="true"></i>
+                                    View Details
+                                </button>
+
+                                <button type="button"
+                                        class="health-provider-outline-button add-provider"
+                                        data-provider-id="3">
+                                    <i class="fa-solid fa-circle-plus"
+                                       aria-hidden="true"></i>
+                                    Add to My Care Team
+                                </button>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <p id="provider-no-results" hidden>
+                        No providers match your search. Try changing your filters.
+                    </p>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="health-provider-sidebar">
+
+                <section class="health-provider-sidebar-card care-team-card">
+                    <div class="health-provider-sidebar-heading">
+                        <i class="fa-solid fa-users" aria-hidden="true"></i>
+                        <div>
+                            <h2>My Care Team</h2>
+                            <p>Keep track of the healthcare providers you see most often.</p>
+                        </div>
+                    </div>
+
+                    <button type="button" id="view-care-team"
+                            class="health-provider-outline-button">
+                        <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                        View My Care Team
+                    </button>
+
+                    <div id="care-team-list" hidden></div>
+                    <p id="care-team-empty" hidden>
+                        You have not added any providers yet.
+                    </p>
+                </section>
+
+                <section class="health-provider-sidebar-card">
+                    <h2>
+                        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                        Helpful Information
+                    </h2>
+
+                    <ul class="health-provider-help-links">
+                        <li>
+                            <a href="#choose-provider">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                How to choose a provider
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#appointment-questions">
+                                <i class="fa-solid fa-comment-medical" aria-hidden="true"></i>
+                                Questions to ask at your appointment
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#visit-checklist">
+                                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                                What to bring to your visit
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#care-team-guide">
+                                <i class="fa-solid fa-user-nurse" aria-hidden="true"></i>
+                                Understanding your care team
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="health-provider-sidebar-card provider-need-help">
+                    <h2>
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        Need Help?
+                    </h2>
+                    <p>
+                        If you need help finding a healthcare provider, ask a
+                        trusted family member or caregiver for assistance.
+                    </p>
+                </section>
+
+            </aside>
+        </div>
+
+        <!-- Helpful Information Sections -->
+        <section class="health-provider-information">
+            <article id="choose-provider">
+                <h2>How to choose a provider</h2>
+                <p>Consider the provider's specialty, experience, location,
+                   accessibility, and your healthcare needs.</p>
+            </article>
+
+            <article id="appointment-questions">
+                <h2>Questions to ask at your appointment</h2>
+                <p>Prepare questions about symptoms, medications, treatment
+                   options, and follow-up care.</p>
+            </article>
+
+            <article id="visit-checklist">
+                <h2>What to bring to your visit</h2>
+                <p>Bring your medication list, allergy information, relevant
+                   health records, and appointment details.</p>
+            </article>
+
+            <article id="care-team-guide">
+                <h2>Understanding your care team</h2>
+                <p>Your care team may include doctors, nurses, specialists,
+                   pharmacists, family members, and caregivers.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2026 SeniorCare Connect. Supporting better care together.</p>
+    </footer>
+<script src="../js/main.js"></script>
+<script src="../js/account-menu.js"></script>
+<script src="../js/healthcare-provider.js"></script>
+</body>
+</html>
